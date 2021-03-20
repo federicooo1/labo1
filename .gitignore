@@ -1,0 +1,8 @@
+# Ignore all hidden files/directories
+.*
+
+# Ignore jupyter-book build directory
+_build/
+
+# Ignore .ipynb, only include notebooks in markdown
+*.ipynb
