@@ -1,1 +1,5 @@
 - file: index
+
+- part: Clase 1
+  chapters:
+  - file: clase_1/02_estocastico

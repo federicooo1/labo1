@@ -3,5 +3,9 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - ipywidgets
   - jupyter-book
   - jupytext
+  - numpy
+  - matplotlib
+  - scipy

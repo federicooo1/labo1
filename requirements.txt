@@ -1,2 +1,6 @@
+ipywidgets
 jupyter-book
 jupytext
+numpy
+matplotlib
+scipy
