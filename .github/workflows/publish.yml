@@ -17,6 +17,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         activate-environment: book
+        auto-activate-base: false
         environment-file: environment.yaml
         python-version: 3.8
 
