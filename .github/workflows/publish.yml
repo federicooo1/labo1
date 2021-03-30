@@ -23,6 +23,9 @@ jobs:
         auto-activate-base: false
         environment-file: environment.yaml
         python-version: 3.8
+        
+    - name: Install kernel
+      run: ipython kernel install --name book --user
 
     - name: Build the book
       run: jupyter-book build .
