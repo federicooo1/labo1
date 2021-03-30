@@ -9,6 +9,9 @@ jobs:
   # This job installs dependencies, build the book, and pushes it to `gh-pages`
   publish-book:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
