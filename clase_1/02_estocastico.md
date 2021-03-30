@@ -421,7 +421,9 @@ En general, se escribe con dos parámetros:
 - $\mu$, que controla el centro de la distribución
 - $\sigma$, que controla el ancho de la distribución
 
-$$ N(x | \mu, \sigma) \propto \exp \left( \frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 \right) $$Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos.
+$$ N(x | \mu, \sigma) \propto \exp \left( \frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 \right) $$
+
+Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos.
 
 ```{code-cell} ipython3
 :tags: []
