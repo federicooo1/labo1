@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experimento estocástico &#8212; Laboratorio 1</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Introducción" href="../index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Laboratorio 1</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introducción
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Clase 1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Experimento estocástico
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/clase_1/02_estocastico.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/clase_1/02_estocastico.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/maurosilber/labo1/main?urlpath=tree/clase_1/02_estocastico.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#midiendo-con-un-cronometro">
+   Midiendo con un cronómetro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analizando-mediciones">
+   Analizando mediciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reportando-un-grafico">
+   Reportando un gráfico
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-plot-o-grafico-de-linea">
+     Line plot o gráfico de linea
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plot-o-grafico-de-dispersion">
+     Scatter plot o gráfico de dispersión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograma">
+     Histograma
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reportando-un-intervalo">
+   Reportando un intervalo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medidas-de-centralidad">
+     Medidas de centralidad
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medidas-de-dispersion">
+     Medidas de dispersión
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpretacion-estadistica">
+   Interpretación estadística
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-normal-o-gaussiana">
+     Distribución normal o gaussiana
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reportando-la-magnitud">
+   Reportando la magnitud
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="experimento-estocastico">
+<h1>Experimento estocástico<a class="headerlink" href="#experimento-estocastico" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="midiendo-con-un-cronometro">
+<h2>Midiendo con un cronómetro<a class="headerlink" href="#midiendo-con-un-cronometro" title="Permalink to this headline">¶</a></h2>
+<p>Para introducir errores estocásticos o estadísticos, realizaremos un experimento entre todos: medir con un cronómetro el intervalo de tiempo entre dos eventos. En particular, el tiempo que transcurre entre dos chasquidos de los dedos.</p>
+<p>Una vez realizado el experimento, ¿qué valor reportarían y con qué error?</p>
+<p>Supongamos que su cronómetro marcó <span class="math notranslate nohighlight">\(1.03\)</span> segundos.</p>
+<p>Haciendo una analogía con el caso de la regla, estaríamos tentados a decir que el error viene dado por el último decimal del cronómetro, es decir, la resolución del instrumento. En este caso, la resolución sería la centésima de segundo, <span class="math notranslate nohighlight">\(0.01\)</span> segundos, y reportaríamos <span class="math notranslate nohighlight">\((1.03 \pm 0.01)\)</span> s.</p>
+<p>Pero tenemos múltiples mediciones de la misma magnitud, el mismo intervalo de tiempo, realizadas por sus compañeres. ¿Creen que les habrá dado a todes igual?</p>
+<p>Lo más probable es que no, y que, por ejemplo, alguien haya medido <span class="math notranslate nohighlight">\(1.09\)</span> s, que no sería <em>compatible</em> con <span class="math notranslate nohighlight">\(1.03\)</span> s si las incertezas fuesen de <span class="math notranslate nohighlight">\(0.01\)</span> s; no se solaparían los intervalos.</p>
+<p>Pero si todes medimos el mismo fenómeno y las mediciones no son compatibles, debe ser que estamos subestimando la incerteza de nuestras mediciones. Por lo tanto, <strong>es fundamental repetir el experimento</strong>, para ver si hay fuentes de errores que no estamos teniendo en cuenta.</p>
+<p>Entonces, ¿qué valor y qué error reportamos?</p>
+</div>
+<div class="section" id="analizando-mediciones">
+<h2>Analizando mediciones<a class="headerlink" href="#analizando-mediciones" title="Permalink to this headline">¶</a></h2>
+<p>Para analizar las mediciones, usaremos dos paquetes de Python fundamentales para el análisis de datos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code>: para hacer cálculos con listas de números</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: para realizar gráficos</p></li>
+</ul>
+<p>Además, usaremos <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> para generar elementos interactivos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supongamos que realizamos las siguientes 30 mediciones, que guardamos en un array de NumPy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fmt: off</span>
+<span class="n">periodos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">1.03</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.18</span><span class="p">,</span> <span class="mf">1.19</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">,</span>
+    <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.26</span><span class="p">,</span> <span class="mf">1.16</span><span class="p">,</span> <span class="mf">1.16</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span>
+    <span class="mf">0.96</span><span class="p">,</span> <span class="mf">1.04</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">1.11</span><span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span>
+    <span class="mf">1.16</span><span class="p">,</span> <span class="mf">1.07</span><span class="p">,</span> <span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.08</span><span class="p">,</span> <span class="mf">1.03</span><span class="p">,</span>
+    <span class="mf">1.08</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">,</span>
+    <span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.06</span><span class="p">,</span> <span class="mf">1.19</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">,</span>
+<span class="p">])</span>
+<span class="c1"># fmt: on</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las primeras preguntas que se podrían hacer son:</p>
+<ul class="simple">
+<li><p>¿Hay algún valor o rango de valores que concentre la mayoría de las mediciones?</p></li>
+<li><p>¿Hay alguna mediciön muy alejada del resto, de alguien que haya “medido mal”?</p></li>
+</ul>
+<p>Es decir, ¿son razonables dichas mediciones?</p>
+<p>Sin embargo, es dificil contestar estas preguntas a partir de una lista de números. Una mejor forma es realizando un gráfico, que es <strong>lo primero que tienen que hacer al analizar un conjunto de datos</strong>.</p>
+<p>Pero, ¿qué gráfico?</p>
+</div>
+<div class="section" id="reportando-un-grafico">
+<h2>Reportando un gráfico<a class="headerlink" href="#reportando-un-grafico" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="line-plot-o-grafico-de-linea">
+<h3>Line plot o gráfico de linea<a class="headerlink" href="#line-plot-o-grafico-de-linea" title="Permalink to this headline">¶</a></h3>
+<p>La función más básica para realizar gráficos es <code class="docutils literal notranslate"><span class="pre">plot</span></code>, que realiza gráficos de línea. Para ello, toma pares ordenados de puntos <span class="math notranslate nohighlight">\((x, y)\)</span>, los grafica y une con una linea. Por ejemplo, grafiquemos <span class="math notranslate nohighlight">\(y = \cos (x)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># [0, 0.1, ..., 10]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># [cos(0), cos(0.1), ..., cos(10)]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe8726b5610&gt;]
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_10_1.png" src="../_images/02_estocastico_10_1.png" />
+</div>
+</div>
+<p><em>Tip:</em> para ver donde están los puntos, se puede pasar un tercer parámetro <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">&quot;o-&quot;)</span></code></p>
+<p>En nuestro experimento no hay pares de valores <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>, sino que solo tenemos <code class="docutils literal notranslate"><span class="pre">y</span></code>, los periodos medidos.</p>
+<p>Si no pasamos un valor para <code class="docutils literal notranslate"><span class="pre">x</span></code>, la función automáticamente asigna valores de <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(N-1\)</span> para <code class="docutils literal notranslate"><span class="pre">x</span></code>, donde <span class="math notranslate nohighlight">\(N\)</span> es la cantidad de mediciones. Se produce un gráfico donde en el eje vertical se encuentra el periodo medido, y en el eje horizontal, el <em>número de medición</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">periodos</span><span class="p">,</span> <span class="s2">&quot;o-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de medición&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Periodo [s]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_13_1.png" src="../_images/02_estocastico_13_1.png" />
+</div>
+</div>
+<p>Sin embargo, esta no es una buena manera de mostrar estos datos. Este tipo de gráficos da a entender que, si se realizara una medición entre dos puntos, caeria sobre la linea que los une. Es mejor reservar el gráfico de linea a gráficos de <em>modelos teóricos</em>, en lugar de mediciones experimentales.</p>
+</div>
+<div class="section" id="scatter-plot-o-grafico-de-dispersion">
+<h3>Scatter plot o gráfico de dispersión<a class="headerlink" href="#scatter-plot-o-grafico-de-dispersion" title="Permalink to this headline">¶</a></h3>
+<p>Otra opción es hacer un <em>scatter plot</em>, que grafica puntos <span class="math notranslate nohighlight">\((x, y)\)</span>, pero sin unirlos con una linea:</p>
+<p>Se puede hacer así:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">periodos</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O, con la función <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code>, que requiere que le pasemos explícitamente los valores de <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numero_de_medicion</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">periodos</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># [0, 1, ..., N-1]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">numero_de_medicion</span><span class="p">,</span> <span class="n">periodos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de medición&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Periodo [s]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_17_1.png" src="../_images/02_estocastico_17_1.png" />
+</div>
+</div>
+<p>Cuando sabemos cuál es el error de cada punto, se suele hacer un gráfico con barras de error con la función <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">numero_de_medicion</span><span class="p">,</span> <span class="n">periodos</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de medición&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Periodo [s]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_19_1.png" src="../_images/02_estocastico_19_1.png" />
+</div>
+</div>
+<p>que en este caso permite apreciar facilmente que los intervalos de las distintas mediciones no coinciden.</p>
+<p>Un <em>scatter plot</em> es un buen gráfico para ver si hay una relación entre dos variables. Por ejemplo, si las mediciones variaran en función del tiempo, podríamos ver algo así:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tiempo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Periodo [s]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_22_1.png" src="../_images/02_estocastico_22_1.png" />
+</div>
+</div>
+<p>Sin embargo, no es lo que sucede en nuestro experimento. Nuestra variable del eje <span class="math notranslate nohighlight">\(x\)</span>, el número de medición, es arbitraria: corresponde a que estudiante realizó cada medición. La ubicación en el eje horizontal podríamos reordenarla como quisieramos. Como solo nos interesa lo que pasa en el eje vertical, podríamos “borrar” la información del eje horizontal, y asignarle <span class="math notranslate nohighlight">\(x=0\)</span> a todos los puntos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">periodos</span><span class="p">),</span> <span class="n">periodos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_estocastico_24_0.png" src="../_images/02_estocastico_24_0.png" />
+</div>
+</div>
+<p>De este gráfico, podriamos ver en qué valores se agrupan más mediciones. Pero se puede hacer mejor con el siguiente tipo de gráfico.</p>
+</div>
+<div class="section" id="histograma">
+<h3>Histograma<a class="headerlink" href="#histograma" title="Permalink to this headline">¶</a></h3>
+<p>Un histograma es una <strong>representación de la distribución de los datos</strong>. Para construirlo, se dividen los datos en un conjunto de intervalos y se cuentan cuantos valores caen en cada intervalo. Generalmente, se muestra como un gráfico de barras, donde se coloca una barra para cada intervalo y la altura de cada barra viene dada por la cantidad de datos en su correspondiente intervalo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">periodos</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cantidad de mediciones&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cantidad de mediciones&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_27_1.png" src="../_images/02_estocastico_27_1.png" />
+</div>
+</div>
+<p>A diferencia de los gráficos anteriores, hacer un histograma requiere de una elección <em>arbitraria</em> del ancho de los intervalos. Hay diversas reglas automáticas para elegirlo, pero ninguna es infalible.</p>
+<p>En particular, con pocos datos, es más díficil elegir un número de <em>bins</em> bueno. Podemos generar más datos para ver como influye variar la cantidad de <em>bins</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;wspace&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">bins</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">bins</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Un solo bin&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Razonable&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Demasiados bins&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 1.0, &#39;Demasiados bins&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_29_1.png" src="../_images/02_estocastico_29_1.png" />
+</div>
+</div>
+<p>En el extremo de un único intervalo, el histograma solamente nos dice cuántos datos tenemos. En el otro extremo, demasiados intervalos, vemos donde está cada punto, pero no nos permite ver la densidad de puntos. El valor ideal está en un punto intermedio, que nos permite evaluar como varia la densidad de datos.</p>
+<p>Si están corriendo el <em>notebook</em>, pueden variar la cantidad de intervalos con el <em>slider</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@ipywidgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatLogSlider</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">bins</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "2fda7c380e2242c3818723375aa54122"}
+</script></div>
+</div>
+<p>Un histograma es un buen resumen gráfico de un set de mediciones <em>equivalentes</em>, es decir, que representan el mismo <em>valor real</em> subyacente. Por ejemplo, las mediciones del intervalo de tiempo entre los dos chasquidos.</p>
+<p>Pero, si realizamos muchos experimentos, no vamos a mostrar un histograma para cada uno. ¿Podemos resumir aún más los datos?</p>
+<p>En particular, si tuviesen que resumir dicha campana de manera textual, ¿cómo la describirian?</p>
+</div>
+</div>
+<div class="section" id="reportando-un-intervalo">
+<h2>Reportando un intervalo<a class="headerlink" href="#reportando-un-intervalo" title="Permalink to this headline">¶</a></h2>
+<p>Una forma de resumir las mediciones es reportar un intervalo. Es decir, condensamos todas las mediciones en dos números: los extremos del intervalo, o, más comúnmente, el centro y el ancho del intervalo.</p>
+<div class="section" id="medidas-de-centralidad">
+<h3>Medidas de centralidad<a class="headerlink" href="#medidas-de-centralidad" title="Permalink to this headline">¶</a></h3>
+<p>Para elegir un valor para el centro, hay varias <a class="reference external" href="https://en.wikipedia.org/wiki/Central_tendency#Measures">medidas de centralidad</a>, cada una con distintos criterios y propiedades. Las más utilizadas son soluciones a la pregunta: ¿cuál es el valor que está “más cerca” de todos?</p>
+<p>Parece un criterio razonable, pero: ¿cómo lo calculamos?</p>
+<p>Supongamos que tenemos <span class="math notranslate nohighlight">\(N\)</span> mediciones <span class="math notranslate nohighlight">\(x_i\)</span>: <span class="math notranslate nohighlight">\(\{x_1, x_2, ..., x_N\}\)</span>, y queremos determinar <em>el centro</em> <span class="math notranslate nohighlight">\(c\)</span>. Primero, calculemos las distancias <span class="math notranslate nohighlight">\(d_i\)</span> de nuestras <span class="math notranslate nohighlight">\(N\)</span> mediciones <span class="math notranslate nohighlight">\(x_i\)</span> a ese valor <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[d_i = |x_i - c|\]</div>
+<p>con <span class="math notranslate nohighlight">\(i\)</span> de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Gráficamente, es la distancia (vertical) de los puntos azules a la linea naranja en el siguiente gráfico:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_min</span><span class="p">,</span> <span class="n">c_max</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">periodos</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">periodos</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+
+<span class="nd">@ipywidgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="n">c_min</span><span class="p">,</span> <span class="n">c_max</span><span class="p">,</span> <span class="p">(</span><span class="n">c_max</span> <span class="o">-</span> <span class="n">c_min</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">periodos</span><span class="o">.</span><span class="n">size</span><span class="p">),</span>
+        <span class="n">periodos</span><span class="p">,</span>
+        <span class="n">yerr</span><span class="o">=</span><span class="p">(</span><span class="n">periodos</span> <span class="o">-</span> <span class="n">c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">periodos</span><span class="p">)),</span>
+        <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Distancias $d_i$&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Centro $c$&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de medición&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">c_min</span><span class="p">,</span> <span class="n">c_max</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "c28b7a78ff0542d2a95512e600a786e8"}
+</script></div>
+</div>
+<p>¿Cómo elegimos el mejor <span class="math notranslate nohighlight">\(c\)</span>, el óptimo?</p>
+<p>Una opción sería elegir <span class="math notranslate nohighlight">\(c\)</span> tal que minimize la suma de las distancias:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\sum_i d_i &amp;= d_1 + \ldots + d_N
+\\         &amp;= |x_1 -c| + \ldots + |x_N-c|
+\end{align}\end{split}\]</div>
+<p>que daría lugar a que <span class="math notranslate nohighlight">\(c\)</span> es la <a class="reference external" href="https://en.wikipedia.org/wiki/Median">mediana</a> de los <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+<p>En lugar de la suma de las distancias, vamos a minimizar la suma de los cuadrados de las distancias. Este criterio, que se conoce como <a class="reference external" href="https://en.wikipedia.org/wiki/Least_squares">cuadrados mínimos</a>, es una elección estándar en estadística.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+S(c) &amp;= |x_1 - c|^2 + |x_2 - c|^2 + \ldots + |x_N - c|^2
+\\   &amp;= \sum_{i=1}^N |x_i - c|^2
+\end{align}\end{split}\]</div>
+<p>Noten que la suma es una función de una única variable, <span class="math notranslate nohighlight">\(c\)</span>, ya que los <span class="math notranslate nohighlight">\(x_i\)</span> son valores fijos dados por nuestras mediciones. Podemos gráficar esta función, que es una parábola:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">c_min</span><span class="p">,</span> <span class="n">c_max</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">periodos</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;S(c)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;S(c)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/02_estocastico_39_1.png" src="../_images/02_estocastico_39_1.png" />
+</div>
+</div>
+<p>Para encontrar el mínimo de esta función, derivamos e igualamos a 0:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+0 = \frac{dS}{dc} &amp;= \frac{d}{dc} \sum_{i=1}^N (x_i - c)^2
+\\&amp;= \sum_{i=1}^N \frac{d}{dc} (x_i - c)^2
+\\&amp;= \sum_{i=1}^N -2 \, (x_i - c)
+\\&amp;= -2 \, \left( \sum_{i=1}^N x_i - \sum_{i=1}^N c \right)
+\\&amp;= -2 \, \left( \sum_{i=1}^N x_i - N c \right)
+\end{align}\end{split}\]</div>
+<p>Despejando <span class="math notranslate nohighlight">\(c\)</span>, llegamos a:</p>
+<div class="math notranslate nohighlight">
+\[ c = \frac{1}{N} \sum_i^N x_i \]</div>
+<p>Es decir, el valor óptimo (en el sentido de cuadrados mínimos) es el promedio de los <span class="math notranslate nohighlight">\(x_i\)</span>, que generalmente se denota como <span class="math notranslate nohighlight">\(\bar{x}\)</span> o <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>.</p>
+<p>NumPy incluye una función para calcularlo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">periodos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1083333333333334
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="medidas-de-dispersion">
+<h3>Medidas de dispersión<a class="headerlink" href="#medidas-de-dispersion" title="Permalink to this headline">¶</a></h3>
+<p>Para elegir un valor de ancho, al igual que con las medidas de centralidad, hay varias <a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_dispersion#Measures">medidas de dispersión</a>, que cuantifican que tanto se apartan las mediciones entre sí, o de su centro.</p>
+<p>La medida que es consistente con el promedio se conoce como la <em>varianza</em>, que es el promedio de las distancias cuadráticas al promedio. O, matemáticamente, que es más claro:</p>
+<div class="math notranslate nohighlight">
+\[ s^2 = \frac{1}{N} \sum_i^N (x_i - \bar{x})^2 \]</div>
+<p><em>Nota: tambíen la pueden ver definida con <span class="math notranslate nohighlight">\(N-1\)</span> en lugar de <span class="math notranslate nohighlight">\(N\)</span>, que se conoce como <a class="reference external" href="https://en.wikipedia.org/wiki/Bessel%27s_correction">la corrección de Bessel</a>.</em></p>
+<p>Pero <strong>la varianza no tiene las mismas unidades</strong> que <span class="math notranslate nohighlight">\(x_i\)</span>. Por ejemplo, si <span class="math notranslate nohighlight">\(x_i\)</span> está en metros, la varianza estará metros cuadrados. Tomando raiz cuadrada para que tenga las mismas unidades:</p>
+<div class="math notranslate nohighlight">
+\[ s = \sqrt{s^2} = \sqrt{\frac{1}{N} \sum_i^N (x_i - \bar{x})^2} \]</div>
+<p>llegamos a lo que se conoce como la desviación estándar.</p>
+<p>NumPy incluye funciones para calcular ambas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">periodos</span><span class="p">)</span>  <span class="c1"># variance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.006153888888888886
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">periodos</span><span class="p">)</span>  <span class="c1"># standard deviation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.07844672643832173
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interpretacion-estadistica">
+<h2>Interpretación estadística<a class="headerlink" href="#interpretacion-estadistica" title="Permalink to this headline">¶</a></h2>
+<p>Con estas dos medidas, podemos resumir nuestras mediciones en dos números: el promedio y la desviación estandar.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">promedio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">periodos</span><span class="p">)</span>
+<span class="n">desv_est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">periodos</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">promedio</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">desv_est</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">) s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.108 ± 0.078) s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gráficamente, podríamos pensar que estamos reemplazando nuestro histograma por el siguiente intervalo:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">periodos</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">promedio</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">bar</span><span class="se">{{</span><span class="s2">x</span><span class="se">}}</span><span class="s2"> = </span><span class="si">{</span><span class="n">promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$ s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span>
+    <span class="n">promedio</span> <span class="o">-</span> <span class="n">desv_est</span><span class="p">,</span>
+    <span class="n">promedio</span> <span class="o">+</span> <span class="n">desv_est</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">bar</span><span class="se">{{</span><span class="s2">x</span><span class="se">}}</span><span class="s2"> \pm s = (</span><span class="si">{</span><span class="n">promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">pm </span><span class="si">{</span><span class="n">desv_est</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)$ s&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Periodo [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cantidad de mediciones&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02_estocastico_48_0.png" src="../_images/02_estocastico_48_0.png" />
+</div>
+</div>
+<p>que no captura todas las mediciones, sino una fracción de ellas.</p>
+<p>En realidad, la interpretación, que generalmente está implicita, es que estamos aproximando nuestro histograma por una distribución <em>gaussiana</em>.</p>
+<div class="section" id="distribucion-normal-o-gaussiana">
+<h3>Distribución normal o gaussiana<a class="headerlink" href="#distribucion-normal-o-gaussiana" title="Permalink to this headline">¶</a></h3>
+<p>La distribución normal tiene la siguiente forma funcional:</p>
+<div class="math notranslate nohighlight">
+\[ N(x) \propto e^{-x^2} \]</div>
+<p>En general, se escribe con dos parámetros:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>, que controla el centro de la distribución</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span>, que controla el ancho de la distribución</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} N(x | \mu, \sigma) \propto \exp \left( \frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 \right) $$Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos.\\```{code-cell} ipython3
+:tags: []\\&#64;ipywidgets.interact(mu=(-5, 5), sigma=(0.4, 3, 0.3))
+def _(mu=0, sigma=1):
+    x = np.linspace(-10, 10, 100)
+    plt.plot(x, scipy.stats.norm.pdf(x, loc=0, scale=1), label=&quot;N(0, 1)&quot;)
+    plt.plot(
+        x,
+        scipy.stats.norm.pdf(x, loc=mu, scale=sigma),
+        label=f&quot;N({mu:.1f}, {sigma:.1f})&quot;,
+        zorder=0,
+    )
+    plt.ylim(-0.1, 1.1)
+    plt.legend(title=&quot;$N(\mu, \sigma)$&quot;)
+```\\Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos. Comparemos el histograma con una gaussiana:\\```{code-cell} ipython3
+:tags: [hide-input]\\# Histograma normalizado
+plt.hist(
+    periodos, bins=7, density=True, color=(0.8, 0.8, 0.8), edgecolor=&quot;black&quot;, zorder=0
+)\\# Gaussiana
+gaussiana = scipy.stats.norm(loc=promedio, scale=desv_est)\\x = promedio + 3 * desv_est * np.linspace(-1, 1, 100)
+plt.plot(x, gaussiana.pdf(x), linewidth=5, label=&quot;Gaussiana&quot;)\\# Centro
+plt.vlines(
+    promedio, 0, gaussiana.pdf(promedio), label=&quot;Promedio&quot;, linewidth=5, color=&quot;C1&quot;
+)\\# Ancho
+plt.hlines(
+    gaussiana.pdf(promedio + desv_est),
+    promedio - desv_est,
+    promedio + desv_est,
+    label=&quot;± Desv. Est.&quot;,
+    linewidth=5,
+    color=&quot;C2&quot;,
+)\\x = promedio + desv_est * np.linspace(-1, 1, 100)
+plt.fill_between(x, gaussiana.pdf(x), color=&quot;C2&quot;, alpha=0.3)\\plt.xlabel(&quot;Periodo [s]&quot;)
+plt.ylabel(&quot;Densidad de mediciones&quot;)
+plt.legend();
+```\\El area verde bajo la curva azul representa aproximadamente $\frac{2}{3}$ del area total de la *gaussiana*. \\Entonces, la interpretación estadística del intervalo dado por $\bar{x} \pm s$ es que esperamos encontrar $\frac{2}{3}$ de las mediciones allí.\\Podemos chequear que fracción de nuestras mediciones están en dicho intervalo:\\```{code-cell} ipython3
+:tags: []\\cond = np.abs(periodos - promedio) &lt; desv_est  # periodos dentro de x̄ ± s
+periodos_dentro = periodos[cond]  # selecciona los periodos tal que cond == True\\periodos_dentro.size / periodos.size  # proporcion de periodos dentro
+```\\Pero, ¿por qué es razonable aproximar nuestras mediciones por una *gaussiana*?\\Generalmente, se va a dar que el histograma de las mediciones tengan *forma de campana*, aunque para pocos datos no se llegue a apreciar. Cuando en una medición intervienen **múltiples fuentes de error**, la distribución de las mediciones tiende a una distribución normal o *gaussiana*.\\Sin embargo, no siempre tiene sentido resumir mediciones en promedio y desviación estandar. Por ejemplo, si las mediciones fueran de los números que salen al arrojar dados, esperariamos un histograma donde todos los números del 1 al 6 tienen la misma probabilidad.\\```{code-cell} ipython3
+:tags: []\\plt.figure(figsize=(6, 2))
+plt.bar(np.arange(1, 7), 1 / 6, width=0.2)
+plt.yticks((0, 1 / 6), labels=(&quot;0&quot;, &quot;1/6&quot;));
+```\\Pero nadie describiria el resultado como el promedio y la desviación estandar: $3.5 \pm 1.7$.\\+++\\## Interpretación física\\La estadística les da herramientas para analizar los datos, pero no les dice que herramienta usar ni que concluir. Es importante **interpretarlos en base a nuestro experimento**.\\En nuestro experimento, tomamos $N$ mediciones $\{x_i\}$, graficamos un histograma de ellas y, luego, lo resumimos como el promedio $\bar{x}$ y la desviación estándar $s$ de los datos. Pero, ¿qué representan? ¿A qué se debe *físicamente* la dispersión en los datos?\\+++\\La dispersión se debe a su tiempo de reacción, que incluye desde escuchar el chasquido hasta accionar el botón del cronómetro. En este caso, la desviación estándar está midiendo algo propio del *proceso de medición*, no de la *magnitud física* que queremos medir: el intervalo entre chasquidos tiene (o tuvo) un periodo bien definido.\\Si lo que nos interesa reportar es el periodo entre chasquidos, para lo cual no vamos a reportar una única medición, sino el promedio de varias mediciones: ¿está bien usar la desviación estándar como incerteza?\\La desviación estándar es **la incerteza de cada medición** $x_i$. ¿La incerteza del promedio de muchas mediciones será la misma? ¿O será menor?\\+++\\## Error del promedio\\Para ver cuál es el error del promedio, hagamos otro experimento, pero esta vez computacional: calcular el promedio de un conjunto cada vez más grande de datos.\\En particular, generemos un millón de datos aleatorios con distribución normal $N(0, 1)$, es decir, con valor medio $\mu = 0$ y desviación estándar $\sigma = 1$:\\```{code-cell} ipython3
+:tags: []\\x = np.random.normal(loc=0, scale=1, size=int(1e6))
+```\\Lo primero que podemos hacer es un histograma de estos datos:\\```{code-cell} ipython3
+:tags: []\\plt.hist(x, bins=100, histtype=&quot;step&quot;);
+```\\La distribución está centrada en 0, como era de esperarse. Podemos calcular el promedio y la desviación estándar de todos los datos:\\```{code-cell} ipython3
+:tags: []\\np.mean(x), np.std(x)
+```\\No dan exactamente 0 y 1, pero están bastante cerca. ¿Qué pasará en cambio si solo consideramos los 10 primeros datos?\\```{code-cell} ipython3
+:tags: []\\np.mean(x[:10]), np.std(x[:10])
+```\\+++ {&quot;tags&quot;: []}\\También están cerca de esos valores, pero no tan cerca como al considerar 1 millón.\\Podemos hacer un gráfico de estos en función de la cantidad de datos que tomamos:\\```{code-cell} ipython3
+:tags: []\\N = np.geomspace(10, x.size, num=30, dtype=int)
+promedios = np.array([x[:n].mean() for n in N])
+desv_ests = np.array([x[:n].std() for n in N])\\fig, ax = plt.subplots(2, 1, sharex=True)\\ax[0].semilogx(N, promedios, &quot;o--&quot;, label=&quot;Promedios&quot;)
+ax[0].axhline(0, color=&quot;C1&quot;, label=&quot;Valor real&quot;)\\ax[1].semilogx(N, desv_ests, &quot;o--&quot;)
+ax[1].axhline(1, color=&quot;C1&quot;)\\ax[0].set(ylabel=&quot;Promedio&quot;)
+ax[1].set(ylabel=&quot;Desv. est.&quot;, xlabel=&quot;Número de mediciones&quot;)
+ax[0].legend();
+```\\Al ir aumentando el número de mediciones, tanto el promedio como la desviación estándar se acercan cada vez más al *valor real*. Tiene sentido, ya que pasa lo mismo con el histograma.\\```{code-cell} ipython3
+:tags: []\\&#64;ipywidgets.interact(N=ipywidgets.FloatLogSlider(10, min=1, max=5))
+def _(N):
+    plt.hist(x, bins=100, density=True)
+    plt.hist(x[: int(N)], bins=&quot;sqrt&quot;, density=True, histtype=&quot;step&quot;)
+    plt.xlim(-5, 5)
+    plt.ylim(0, 1)
+```\\A medida que tomamos más datos, mejor definida está la campana, tanto en su centro como en su ancho.\\+++\\El error del promedio, $\sigma_{\bar{x}}$, viene dado por la siguiente formula:\\$$ \sigma_{\bar{x}} = \frac{\sigma_x}{\sqrt{N}} \end{aligned}\end{align} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(\sigma_x\)</span> es la desviación estándar de los datos <span class="math notranslate nohighlight">\(\{x_i\}\)</span>, y <span class="math notranslate nohighlight">\(N\)</span> es la cantidad de datos promediados. Noten que este valor sí disminuye con la cantidad de mediciones <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Comparemos los valores “experimentales” para el error del promedio <span class="math notranslate nohighlight">\(|\bar{x} - \mu|\)</span> con lo esperado teóricamente, <span class="math notranslate nohighlight">\(\frac{\sigma_x}{\sqrt{N}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_promedio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">promedios</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;s / $\sqrt</span><span class="si">{N}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">error_promedio</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|\bar</span><span class="si">{x}</span><span class="s2"> - \mu|$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de mediciones $N$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Error del promedio&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">24</span><span class="n">be7569df50</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">error_promedio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">promedios</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;s / $\sqrt</span><span class="si">{N}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">error_promedio</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|\bar</span><span class="si">{x}</span><span class="s2"> - \mu|$&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Número de mediciones $N$&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;promedios&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reportando-la-magnitud">
+<h2>Reportando la magnitud<a class="headerlink" href="#reportando-la-magnitud" title="Permalink to this headline">¶</a></h2>
+<p>Para reportar nuestra mejor determinación del periodo entre chasquidos, usaremos el promedio y el error del promedio:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">periodos</span><span class="o">.</span><span class="n">size</span>  <span class="c1"># Cantidad de datos</span>
+<span class="n">promedio</span> <span class="o">=</span> <span class="n">periodos</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">desv_est</span> <span class="o">=</span> <span class="n">periodos</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>  <span class="c1"># Tiempo de respuesta</span>
+<span class="n">error_promedio</span> <span class="o">=</span> <span class="n">desv_est</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El tiempo de respuesta de les estudiantes es </span><span class="si">{</span><span class="n">desv_est</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El periodo entre aplausos fue: </span><span class="si">{</span><span class="n">promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">error_promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            kernelName: "book",
+            path: "./clase_1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Introducción</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mauro Silberberg<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
