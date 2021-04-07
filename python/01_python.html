@@ -1,0 +1,2337 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parte 1 &#8212; Laboratorio 1</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experimento estocástico" href="../clase_1/02_estocastico.html" />
+    <link rel="prev" title="Introducción" href="../index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Laboratorio 1</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introducción
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parte 1
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Clase 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../clase_1/02_estocastico.html">
+   Experimento estocástico
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/python/01_python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python/01_python.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/maurosilber/labo1/main?urlpath=tree/python/01_python.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operadores">
+   Operadores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operadores-aritmeticos">
+     Operadores aritméticos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operadores-de-comparacion">
+     Operadores de comparación
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#asignacion-de-variables">
+   Asignación de variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#asignacion-multiple">
+     Asignación multiple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1">
+   Ejercicio 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos-de-objetos">
+   Tipos de objetos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cadenas-de-texto">
+   Cadenas de texto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-strings">
+     f-strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funciones">
+   Funciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formas-de-llamar-funciones">
+     Formas de llamar funciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mas-formas-de-definir-funciones">
+     Más formas de definir funciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cuando-definir-funciones">
+     ¿Cuándo definir funciones?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metodos">
+     Métodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estructuras-de-datos-tuplas-y-listas">
+   Estructuras de datos: tuplas y listas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing">
+     Indexing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing">
+     Slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mutabilidad">
+     Mutabilidad
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3">
+     Ejercicio 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulos-y-paquetes">
+   Modulos y paquetes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   NumPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#array">
+     Array
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propiedades-shape-size-ndim">
+     Propiedades: shape, size, ndim
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-y-slicing">
+     Indexing y slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operaciones-matematicas-y-broadcasting">
+     Operaciones matemáticas y broadcasting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-indexing">
+     Advanced indexing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4">
+   Ejercicio 4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-4a">
+     Ejercicio 4a
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4b">
+   Ejercicio 4b
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-4c">
+     Ejercicio 4c
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="parte-1">
+<h1>Parte 1<a class="headerlink" href="#parte-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="operadores">
+<h2>Operadores<a class="headerlink" href="#operadores" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operadores-aritmeticos">
+<h3>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h3>
+<p>Una forma fácil de empezar es <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator">usando Python como una calculadora</a>.</p>
+<p>A excepción de la exponenciación, que en otros lenguajes se usa el símbolo <code class="docutils literal notranslate"><span class="pre">^</span></code>, los operadores aritméticos son los estándar que se usan en otros lenguajes de progración, o fórmulas de Excel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="p">:</span> <span class="n">suma</span>
+<span class="o">-</span><span class="p">:</span> <span class="n">resta</span>
+<span class="o">*</span><span class="p">:</span> <span class="n">multiplicación</span>
+<span class="o">/</span><span class="p">:</span> <span class="n">división</span>
+<span class="o">**</span><span class="p">:</span> <span class="n">exponenciación</span>
+</pre></div>
+</div>
+<p>Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otros operadores aritméticos que pueden ser de utilidad son:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">:</span> <span class="n">división</span> <span class="n">entera</span>
+<span class="o">%</span><span class="p">:</span> <span class="n">módulo</span> <span class="n">ó</span> <span class="n">resto</span> <span class="n">de</span> <span class="n">la</span> <span class="n">división</span> <span class="n">entera</span>
+<span class="o">@</span><span class="p">:</span> <span class="n">multiplicación</span> <span class="n">matricial</span>
+</pre></div>
+</div>
+<p>Por ejemplo, “7 dividido 2 es 3 y el resto es 1”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>En particular, el módulo es útil para chequear si un número es divisible por otro, ya que su módulo tiene que ser 0.</p>
+</div>
+<div class="section" id="operadores-de-comparacion">
+<h3>Operadores de comparación<a class="headerlink" href="#operadores-de-comparacion" title="Permalink to this headline">¶</a></h3>
+<p>Los operadores de comparación son:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="p">:</span> <span class="n">mayor</span>
+<span class="o">&lt;</span><span class="p">:</span> <span class="n">menor</span>
+<span class="o">&gt;=</span><span class="p">:</span> <span class="n">mayor</span> <span class="n">o</span> <span class="n">igual</span>
+<span class="o">&lt;=</span><span class="p">:</span> <span class="n">menor</span> <span class="n">o</span> <span class="n">igual</span>
+<span class="o">==</span><span class="p">:</span> <span class="n">igual</span>
+<span class="o">!=</span><span class="p">:</span> <span class="n">distinto</span>
+</pre></div>
+</div>
+<p>y devuelven <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>, un tipo de dato llamado <code class="docutils literal notranslate"><span class="pre">bool</span></code>eano.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">5</span>  <span class="c1"># Es equivalente a (2 + 2) == 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Noten que para chequear igualdad hay que poner doble <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>Si ponemos un único igual, nos va a <em>arrojar</em> un error:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-6-667480b6e489&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">4</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: cannot assign to literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es importante aprender a leer el error, porque nos da pistas de como resolverlo. O, al menos, para pedir ayuda si no lo podemos resolver.</p>
+<p>Nos dice que es un <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> (error de sintaxis), porque no se puede <em>asignar</em> a un <em>literal</em>, y nos marca en qué línea sucedió el error.</p>
+<p>Al escribir <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">=</span> <span class="pre">5</span></code>, estamos tratando de redefinir el <code class="docutils literal notranslate"><span class="pre">4</span></code> como <code class="docutils literal notranslate"><span class="pre">5</span></code>, porque el <code class="docutils literal notranslate"><span class="pre">=</span></code> se utiliza para realizar asignaciones.</p>
+</div>
+</div>
+<div class="section" id="asignacion-de-variables">
+<h2>Asignación de variables<a class="headerlink" href="#asignacion-de-variables" title="Permalink to this headline">¶</a></h2>
+<p>En Python, <strong>todo es un objeto</strong>. Objeto no es sinónimo de “cosa”, sino que tiene un significado particular en computación, en el cual no vamos a profundizar en esta introducción. Como veremos más adelante, hay distintos tipos de objetos, con distintas propiedades y funcionalidades. Por ahora, sigamos pensando en números, que son los únicos objetos que vimos.</p>
+<p>Como bien explica <a class="reference external" href="https://www.youtube.com/watch?v=_AEJHKGk9ns">esta presentación</a>, asignar una variable es simplemente <strong>darle un nombre a un objeto</strong>. Generalmente, se dice (y diremos) que se <em>guarda</em> un objeto en una variable.</p>
+<p>Casi cualquier palabra es un <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#identifiers">nombre válido para una variable</a>, aunque hay <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">ciertas palabras que están reservadas</a> ya que corresponden a <em>comandos</em>. Lo ideal es ponerle un nombre bien descriptivo, que <em>documente</em> que es lo que está <em>guardado</em> ahí. Por ejemplo, si la variable guarda una longitud, llámenla <code class="docutils literal notranslate"><span class="pre">longitud</span></code> y no <code class="docutils literal notranslate"><span class="pre">x</span></code>. Es importante para que se pueda entender más fácilmente qué está haciendo el código, sobretodo al leerlo más adelante.</p>
+<p>Por ahora, vamos a ignorar nuestro consejo y usar <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">6</span><span class="n">fcf9dfbd479</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nos <em>arrojó</em> un error. Claro, no <em>guardamos</em> nada en <code class="docutils literal notranslate"><span class="pre">x</span></code> aún:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Noten que al asignar una variable, no <em>devuelve</em> nada. Si queremos ver que está guardado en <code class="docutils literal notranslate"><span class="pre">x</span></code>, podemos poner simplemente <code class="docutils literal notranslate"><span class="pre">x</span></code> en una celda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>o, también, podemos usar la función <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para hacer más <em>legible</em> el código, es importante ir guardando resultados intermedios en distintas variables.</p>
+<p>Por ejemplo, ahora podemos usar este <em>resultado intermedio</em> en otras operaciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>que, a su vez, podriamos guardarlo en otra variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al principio, algo potencialmente confuso es que se puede hacer esto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Cuánto vale <code class="docutils literal notranslate"><span class="pre">x</span></code> ahora?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si corrimos la celda una única vez, lo que pasó fue lo siguiente:</p>
+<ol class="simple">
+<li><p>Al empezar, <code class="docutils literal notranslate"><span class="pre">x</span></code> es 3</p></li>
+<li><p>Le pedimos que <em>corra</em>: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p>Se reemplazan las variables a la derecha del <code class="docutils literal notranslate"><span class="pre">=</span></code>: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p>Se calcula el resultado: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
+<li><p>Se <em>guarda</em> el resultado: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">4</span></code></p></li>
+</ol>
+<p>Reiterando, el <code class="docutils literal notranslate"><span class="pre">=</span></code> no representa una igualdad, sino una asignación.</p>
+<div class="section" id="asignacion-multiple">
+<h3>Asignación multiple<a class="headerlink" href="#asignacion-multiple" title="Permalink to this headline">¶</a></h3>
+<p>Para asignar multiples variables a la vez, se puede hacer una asignación por linea:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>o, todo en una línea, separandolas por comas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A la derecha del igual, se esta usando una tupla (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>), un conjunto ordenado de objetos, que introduciremos más adelante.</p></li>
+<li><p>A la izquierda del igual, se usa lo que se llama <code class="docutils literal notranslate"><span class="pre">tuple</span> <span class="pre">unpacking</span></code>, que no vamos a entrar en detalle en esta introducción a Python, pero sí lo vamos a usar.</p></li>
+</ul>
+<p>En principio, ambas maneras son equivalentes. Pero, desde el punto de hacer más legible el código, la segunda da a entender que <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> están relacionados, por ejemplo, que son las coordenadas de un punto <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<p>De la misma manera, se puede mostrar el resultado de más de una variable con una tupla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>pero no poniéndolas en distintas lineas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>ya que solo se nos muestra el resultado de la última linea, si no es una asignación.</p>
+<p>En cambio, sí funciona con <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-1">
+<h2>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h2>
+<p>Calcule las raíces del polinomio <span class="math notranslate nohighlight">\(2x^2 - 10x + 8\)</span>.</p>
+<p><strong>Ayuda:</strong></p>
+<ul class="simple">
+<li><p>Para un polinomio de la forma <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span>, las raices <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span> vienen dadas por:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ x_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+<ul class="simple">
+<li><p>Para calcular la raiz, se puede hacer una exponenciación: <span class="math notranslate nohighlight">\(\sqrt{x} = x^{1/2}\)</span></p></li>
+<li><p>Las raíces son <span class="math notranslate nohighlight">\(x=1\)</span> y <span class="math notranslate nohighlight">\(x=4\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete el código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución</strong>:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span>
+
+<span class="n">disc</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">raiz_1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">raiz_2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">raiz_1</span><span class="p">,</span> <span class="n">raiz_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, 1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aunque hay distintas formas de escribir la solución, pero quiero resaltar lo siguiente de esta solución:</p>
+<ol class="simple">
+<li><p>Por empezar, se asignaron los coeficientes del polinomio a distintas variables. Una mala práctica en programación es <em><a class="reference external" href="https://en.wikipedia.org/wiki/Hard_coding">hardcodear</a></em> valores en el código. Por ejemplo, si hubiesemos puesto directamente los coeficientes en la fórmula de las raíces. Si después quisieramos usar el código para otro polinomio, tendríamos que cambiar todos los lugares donde aparecen <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">c</span></code>, en lugar de cambiarlos en un único lugar al inicio.</p></li>
+<li><p>Las variables de entrada (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> y <code class="docutils literal notranslate"><span class="pre">c</span></code>) se podrían haber asignado en lineas separadas. Pero asignarlas en una sola linea da a entender que <em>están relacionadas</em>. En este caso, son los coeficientes del mismo polinomio.</p></li>
+<li><p>En lugar de llamar a las raices del polinomio <code class="docutils literal notranslate"><span class="pre">x1</span></code> y <code class="docutils literal notranslate"><span class="pre">x2</span></code>, las llamamos con un nombre más descriptivo <code class="docutils literal notranslate"><span class="pre">raiz_1</span></code> y <code class="docutils literal notranslate"><span class="pre">raiz_2</span></code>.</p></li>
+<li><p>El uso de la variable intermedia <code class="docutils literal notranslate"><span class="pre">disc</span></code>, el <em>discriminante</em> de la cuadrática, que hace el código más legible. Pero no solo eso: si el <em>choclo</em> que es <code class="docutils literal notranslate"><span class="pre">disc</span></code> se repitiera dos veces, en <code class="docutils literal notranslate"><span class="pre">raiz_1</span></code> y <code class="docutils literal notranslate"><span class="pre">raiz_2</span></code>, también podría dar lugar a errores, por ejemplo, al poner mal un signo en una de las fórmulas.</p></li>
+</ol>
+</div>
+<div class="section" id="tipos-de-objetos">
+<h2>Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Permalink to this headline">¶</a></h2>
+<p>Como mencionamos antes, en Python, <strong>todo es un objeto</strong>. Por ahora, solo nos va a importar que hay distintos tipos de objetos, y que se comportan de manera diferente.</p>
+<p>Para saber el tipo de un objeto, hay que usar la función <code class="docutils literal notranslate"><span class="pre">type</span></code>. Por ejemplo, el tipo del número <code class="docutils literal notranslate"><span class="pre">2</span></code> es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>Algunos tipos de objetos básicos son estos:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Tipo de objeto</p></th>
+<th class="text-align:center head"><p>Significado</p></th>
+<th class="text-align:center head"><p>Ejemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>int</p></td>
+<td class="text-align:center"><p>número entero</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>float</p></td>
+<td class="text-align:center"><p>número de punto flotante</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>str</p></td>
+<td class="text-align:center"><p>cadena de texto</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>bool</p></td>
+<td class="text-align:center"><p>booleano</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>NoneType</p></td>
+<td class="text-align:center"><p>?</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>tuple</p></td>
+<td class="text-align:center"><p>tupla</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">(1.0,</span> <span class="pre">&quot;dos&quot;,</span> <span class="pre">42,</span> <span class="pre">True)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>list</p></td>
+<td class="text-align:center"><p>lista</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">[1.0,</span> <span class="pre">&quot;dos&quot;,</span> <span class="pre">42,</span> <span class="pre">True]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>dict</p></td>
+<td class="text-align:center"><p>diccionario</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">{&quot;uno&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;dos&quot;:</span> <span class="pre">2}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Pueden notar que hay dos tipos de números: los enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>) y los de <a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">punto flotante</a> (<code class="docutils literal notranslate"><span class="pre">float</span></code>), que permiten representar números no enteros, un “número con decimales”.</p>
+<p>Por ejemplo, si sumamos dos <code class="docutils literal notranslate"><span class="pre">int</span></code>, obtenemos otro <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, int)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero si dividimos dos <code class="docutils literal notranslate"><span class="pre">int</span></code>, obtenemos un <code class="docutils literal notranslate"><span class="pre">float</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, float)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incluso si el resultado pudiese ser representado por un entero. Python no sabe a priori que va a dar, así que convierte los números a <code class="docutils literal notranslate"><span class="pre">float</span></code> antes de hacer la división.</p>
+<p>Por ahora, los usamos indistintamente, pero la diferencia es importante por (al menos) dos razones:</p>
+<ol class="simple">
+<li><p>Hay ciertos lugares donde Python requiere que se utilize un <code class="docutils literal notranslate"><span class="pre">int</span></code>. Siempre podemos convertir un <code class="docutils literal notranslate"><span class="pre">float</span></code> en un <code class="docutils literal notranslate"><span class="pre">int</span></code> de la siguiente manera:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Hay que tener cuidado al comparar <code class="docutils literal notranslate"><span class="pre">float</span></code>s:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
+
+<span class="n">x</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>porque <code class="docutils literal notranslate"><span class="pre">x</span></code> es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Extra: <a class="reference external" href="https://www.smbc-comics.com/comic/2013-06-05">cómic al respecto en SMBC Comics</a>.</em></p>
+<p>Para comparar <code class="docutils literal notranslate"><span class="pre">float</span></code>s, hay que elegir una tolerancia, por ejemplo, <span class="math notranslate nohighlight">\(10^{-15}\)</span>, chequear si se encuentran a menos de esa distancia: <span class="math notranslate nohighlight">\(|x-y| &lt; 10^{-15}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cadenas-de-texto">
+<h2>Cadenas de texto<a class="headerlink" href="#cadenas-de-texto" title="Permalink to this headline">¶</a></h2>
+<p>Las cadenas de texto, o <em>strings</em>, son el tipo de objeto que Python usa para texto. Nos van a servir para decirle a Python, por ejemplo, el nombre de un archivo, o darle el texto para poner en los ejes de un gráfico.</p>
+<p>Se pueden definir tanto comillas simples como dobles: <code class="docutils literal notranslate"><span class="pre">'hola'</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code>. También esta la opción de triple comilla, que sirve para texto de multiples renglones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Este es un</span>
+<span class="sd">string de</span>
+<span class="sd">multiples</span>
+<span class="sd">renglones.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Este es un\nstring de\nmultiples\nrenglones.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Noten que divide los renglones con un <code class="docutils literal notranslate"><span class="pre">\n</span></code>, que es el código que se usa para señalar que comienza una nueva linea.</p>
+<p>Python interpreta la suma entre <code class="docutils literal notranslate"><span class="pre">str</span></code> como concatenación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hola&quot;</span> <span class="o">+</span> <span class="s2">&quot;mundo&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;holamundo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incluso si son números:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;2&quot;</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;22&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A diferencia de <em>cierto otro lenguaje que no vamos a nombrar</em>, Python arroja un error de tipo (<code class="docutils literal notranslate"><span class="pre">TypeError</span></code>) cuando se quieren sumar números y <em>strings</em>:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mf">80052203e394</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">2</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>porque no sabe si queremos de resultado <code class="docutils literal notranslate"><span class="pre">4</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;22&quot;</span></code> y, ante la duda, prefiere no adivinar.</p>
+<div class="section" id="f-strings">
+<h3>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">¶</a></h3>
+<p>Hay diversas maneras de insertar variables dentro de <em>strings</em>, pero la más legible (y por lo tanto, recomendada) es la de los <code class="docutils literal notranslate"><span class="pre">f-strings</span></code>, que consiste en poner una <code class="docutils literal notranslate"><span class="pre">f</span></code> antes de abrir comillas y poner las variables encerradas en llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;La respuesta es x&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La respuesta es x&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;La respuesta es </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La respuesta es 42&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede especificar el formato en el que convierte la variable a texto, por ejemplo, para redondear hasta determinado número de decimales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592</span>
+
+<span class="sa">f</span><span class="s2">&quot;Pi = </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pi = 3.14&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pueden ver en la <a class="reference external" href="https://docs.python.org/3/library/string.html#formatspec">documentación</a>, si quieren ver todas las opciones disponibles.</p>
+</div>
+</div>
+<div class="section" id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">¶</a></h2>
+<p>Las funciones son bloques de código que reciben párametros, realizan una serie de acciones, y devuelven un resultado.</p>
+<p>Es más fácil entenderlo con un ejemplo simple. Definamos una función para calcular el largo de un vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">norma_vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calcula la norma euclídea del vector (x, y)&quot;&quot;&quot;</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">r2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora tenemos una variable llamada <code class="docutils literal notranslate"><span class="pre">norma_vector</span></code> que <em>apunta</em> a la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norma_vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.norma_vector(x, y)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos <em>llamar</em> a la función pasandole los argumentos entre paréntesis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norma_vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sobre la definición de una función, hay varios puntos a resaltar:</p>
+<ol class="simple">
+<li><p>La <em>indentación</em>, es decir, el espacio en blanco que hay al principio de cada linea dentro del bloque que define la función. Python utiliza este espacio en blanco para delimitar bloques y saber dónde termina la función. Por convención, se usan 4 espacios en blanco, y las IDEs, como Jupyter, insertan 4 espacios al presionar <code class="docutils literal notranslate"><span class="pre">Tab</span></code>.</p></li>
+<li><p>El <code class="docutils literal notranslate"><span class="pre">return</span></code>, que es lo que va a devolver la función. Esta termina cuando llega a un <code class="docutils literal notranslate"><span class="pre">return</span></code>. Si no hay ninguno, termina cuando llega al final del bloque y devuelve implicitamente un <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>El nombre, al igual que las variables, tiene que ser descriptivo, para poder saber que hace la función sin tener que ir a leer su código.</p></li>
+<li><p>El <em>docstring</em>, o <em>string</em> de documentación, que es la primer linea dentro del bloque de la función. Describe brevemente que hace la función, que parámetros toma y que devuelve. Se puede acceder a ellas con la función <code class="docutils literal notranslate"><span class="pre">help</span></code>:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">norma_vector</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function norma_vector in module __main__:
+
+norma_vector(x, y)
+    Calcula la norma euclídea del vector (x, y)
+</pre></div>
+</div>
+</div>
+</div>
+<p>También, según que IDE estén usando, hay otras maneras de mostrar la ayuda. Por ejemplo, en Jupyter es <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code>.</p>
+<div class="section" id="formas-de-llamar-funciones">
+<h3>Formas de llamar funciones<a class="headerlink" href="#formas-de-llamar-funciones" title="Permalink to this headline">¶</a></h3>
+<p>Hay diferentes maneras de llamar a la función. En general, se puede pasar los argumentos por posición (como hicimos antes), por nombre, o una mezcla de ambos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norma_vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>      <span class="c1"># por posición</span>
+
+<span class="n">norma_vector</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># por nombre o keyword</span>
+<span class="n">norma_vector</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># no hace falta respetar el orden</span>
+
+<span class="n">norma_vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>    <span class="c1"># mixto</span>
+</pre></div>
+</div>
+<p>Todas estas formas de llamar la función son válidas y dan el mismo resultado.</p>
+<p>En cambio, nos va a tirar un error si nos olvidamos de un parametro:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norma_vector</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="n">a5b88701c76a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">norma_vector</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: norma_vector() missing 1 required positional argument: &#39;y&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>O si ponemos argumentos posicionales despues de los que son por nombre:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norma_vector</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-42-1bfe2a714e8f&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">norma_vector</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: positional argument follows keyword argument
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mas-formas-de-definir-funciones">
+<h3>Más formas de definir funciones<a class="headerlink" href="#mas-formas-de-definir-funciones" title="Permalink to this headline">¶</a></h3>
+<p>Hay más formas de definir funciones:</p>
+<ul class="simple">
+<li><p>funciones con valores por defecto para ciertos paramétros</p></li>
+<li><p>que acepten una cantidad variable de parámetros (posicionales, por nombre, o ambos)</p></li>
+<li><p>que limiten ciertos parárametros a ser solo posicionales, o solo por nombre</p></li>
+<li><p>funciones “anónimas”, con el comando <code class="docutils literal notranslate"><span class="pre">lambda</span></code></p></li>
+</ul>
+<p>Para definir parámetros por defecto, se <em>asigna</em> un valor en la definición de la función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcion</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Veamos una función que ya usamos y define variables por defecto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> tiene ciertos parametros que controlan cómo y a dónde <em>imprime</em>. Por defecto, agrega una nueva linea, <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>, al final de lo que imprime:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero si queremos poner otro valor, solo tenemos que pasarle ese parámetro por nombre, sin tener que pasarle el resto de los parámetros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; -&gt; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 -&gt; 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-2">
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h3>
+<p>Encapsule en una función el código para calcular las raices de la cuadrática y vuelva a calcular las raíces del polinomio <span class="math notranslate nohighlight">\(2x^2 - 10x + 8\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete el código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución</strong></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raices_cuadratica</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calcula las raices de un polinomio cuadratico ax^2 + bx + c.&quot;&quot;&quot;</span>
+    <span class="n">disc</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">raiz_1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">raiz_2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">raiz_1</span><span class="p">,</span> <span class="n">raiz_2</span>
+
+
+<span class="n">raices_cuadratica</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, 1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fijense la importancia del <em>docstring</em>, que nos dice cuál es la relación entre los parámetros y el polinomio. Si no, cada vez que quisieramos usar la función tendriamos que ir a ver el código de la función (y entenderlo) para ver si <code class="docutils literal notranslate"><span class="pre">a</span></code> corresponde al término cuadrático o constante.</p>
+</div>
+<div class="section" id="cuando-definir-funciones">
+<h3>¿Cuándo definir funciones?<a class="headerlink" href="#cuando-definir-funciones" title="Permalink to this headline">¶</a></h3>
+<p>Definir funciones tiene múltiples ventajas en términos de estructurar nuestro código de manera que sea fácil de usar y entender. Sin embargo, puede no estar tan claro que código debería estar definido en una función. Para ello, sirve discutir algunos conceptos importantes en computación: reusabilidad, mantenibilidad, modularidad y abstracción.</p>
+<p>Para empezar, las funciones nos permiten <em>reusar</em> código. Si un bloque de código se repite múltiples veces, podemos “sacar factor común” y definir una función en su lugar. Por ejemplo, si queremos calcular las raices de multiples polinomios, podemos reusar la función que ya definimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raices_1</span> <span class="o">=</span> <span class="n">raices_cuadratica</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">raices_2</span> <span class="o">=</span> <span class="n">raices_cuadratica</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero no repetir código no es (solo) de <em>vago</em>, sino que también ayuda en el <em>mantenimiento</em> del código. Por ejemplo, si encontramos un error en nuestra función, solo tenemos que arreglarlo en un lugar.</p>
+<p>Por otro lado, las funciones nos permiten <em>abstraer</em> el código al reemplazar múltiples lineas de código por un <em>llamado</em> a la función. Por ejemplo, nos abstraen del detalle de cómo se calculan las raíces de un polinomio. Esto nos permite <strong>razonar más fácilmente</strong> sobre que hace el programa, ya que no vemos el detalle paso a paso, sino lo que entra y lo que sale.</p>
+<p><img alt="" src="python/bart.png" /></p>
+<p>¿Pero cuál es el nivel de abstracción <em>correcta</em>?</p>
+<p>Supongamos que queremos hacer un programa que calcule las raíces de un polinomio y las grafique. Podríamos dividir dicho programa en 3 pasos:</p>
+<ol class="simple">
+<li><p>Calcular el discriminante.</p></li>
+<li><p>Calcular las raíces.</p></li>
+<li><p>Graficar las raíces.</p></li>
+</ol>
+<p>En un extremo, podríamos encapsular todo en una única función. Pero si alguien quisiera graficar las raíces de una manera distinta, no podría reutilizar nuestro código para calcular las raíces, porque estaría todo acoplado.</p>
+<p>En el otro extremo, cada paso podría ser una función separada. Pero, ¿tiene algún sentido separar el cálculo del discriminante del de las raíces? ¿Tiene algún otro uso el discriminante?</p>
+<p>En este ejemplo, el nivel de abstracción correcto parecería ser agrupar los pasos 1 y 2 en una función, y el paso 3 en otra función.</p>
+<p>Otro beneficio de las funciones es que encapsulan código y nos salvan de <em>pisar</em> o sobreeescribir variables que definimos previamente. Mientras que una función puede acceder a una variable externa a la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_externa</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">dos</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">suma_variable_externa_a</span><span class="p">(</span><span class="n">parametro_interno</span><span class="p">):</span>
+    <span class="n">dos</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">variable_interna</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="k">return</span> <span class="n">parametro_interno</span> <span class="o">+</span> <span class="n">variable_externa</span>
+
+
+<span class="n">suma_variable_externa_a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>no modifica las variables externas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Además, las variables internas y los parámetros de la función no son accesibles desde el exterior:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_interna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">51</span><span class="o">-</span><span class="mi">8828</span><span class="n">fc582254</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">variable_interna</span>
+
+<span class="ne">NameError</span>: name &#39;variable_interna&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, este tipo de funciones que utilizan <strong>variables externas o <em>globales</em> hacen más dificil razonar sobre el código</strong>. Si volvemos a usar la función <code class="docutils literal notranslate"><span class="pre">suma_variable_externa_a(10)</span></code>, no es claro si va a dar el mismo resultado que antes, a pesar de que le estamos pasando el mismo argumento: alguien podría haber modificado el valor de <code class="docutils literal notranslate"><span class="pre">variable_externa</span></code> en el medio.</p>
+<p>Un paradigma de programación, llamado <a class="reference external" href="https://en.wikipedia.org/wiki/Functional_programming">programación funcional</a>, propone diferenciar <em>procedimientos</em> o <em>subrutinas</em> de <em>funciones puras o determinísticas</em>, siendo estas últimas las <strong>funciones cuyo resultado sólo depende de los parámetros de entrada</strong>.</p>
+</div>
+<div class="section" id="metodos">
+<h3>Métodos<a class="headerlink" href="#metodos" title="Permalink to this headline">¶</a></h3>
+<p>Los métodos son funciones que están asociadas a un objeto. La sintaxis para acceder a ellos es poner un punto después del objeto. Por ejemplo, el método <code class="docutils literal notranslate"><span class="pre">str.upper</span></code> sirve para convertir un <em>string</em> en mayúsculas o <em>uppercase</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HOLA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La ventaja frente a funciones es que, al estar asociadas a un (tipo de) objeto, no podemos usarlas para un tipo de dato.</p>
+<p>Por ejemplo, imaginemos que definimos una función que transforma un número decimal en una fracción:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numero_a_fraccion</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># MAGIA</span>
+    <span class="k">return</span> <span class="n">fraccion</span>
+</pre></div>
+</div>
+<p>tal que si le pasamos <code class="docutils literal notranslate"><span class="pre">0.25</span></code>, nos devuelve <code class="docutils literal notranslate"><span class="pre">1/4</span></code>.</p>
+<p>¿Pero que pasa si le pasamos un string: <code class="docutils literal notranslate"><span class="pre">numero_a_fraccion(&quot;hola&quot;)</span></code>?</p>
+<p>Tendría que arrojar un error. Pero, dependiendo de como la hayamos programado, podría dar un resultado (equivocado).</p>
+<p>En cambio, si fuese un método de los números, no podríamos equivocarnos y pasarle un tipo de dato equivocado. La función ya está asociada a un número.</p>
+<p>En particular, esa método ya existe, y se llama <code class="docutils literal notranslate"><span class="pre">as_integer_ratio</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero si tratamos de usarlo en un <code class="docutils literal notranslate"><span class="pre">str</span></code>, nos dice que no existe:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hola&quot;</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">54</span><span class="o">-</span><span class="n">ab2f1804450b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;hola&quot;</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;as_integer_ratio&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="estructuras-de-datos-tuplas-y-listas">
+<h2>Estructuras de datos: tuplas y listas<a class="headerlink" href="#estructuras-de-datos-tuplas-y-listas" title="Permalink to this headline">¶</a></h2>
+<p>En Python, hay diversas estructuras de datos que nos permiten manejar conjuntos de objetos de manera más cómoda. Las más fundamentales son las tuplas (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>), listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>) y diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p>
+<p>La tupla y la lista son similares entre sí: ambas <em>guardan</em> una secuencia de objetos, es decir, un conjunto ordenado de objetos. La sintaxis para definirlas también es similar: se separa un grupo de objetos por comas, y se los encierra entre paréntesis (tuplas) o corchetes (listas).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;último&quot;</span><span class="p">)</span>
+<span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;último&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vimos antes, en la tupla se puede omitir el uso de paréntesis.</p>
+<p>Conceptualmente, es como haber definido 4 variables, <span class="math notranslate nohighlight">\(\{x_0, x_1, x_2, x_3\}\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x_0</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">x_2</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">x_3</span> <span class="o">=</span> <span class="s2">&quot;último&quot;</span>
+</pre></div>
+</div>
+<p>Pero, en lugar de tener 4 nombres distintos, tenemos un único nombre con una notación especial para acceder a cada variable.</p>
+<div class="section" id="indexing">
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
+<p>En ambos casos, podemos acceder a los elementos por su ubicación o índice. Siguendo la práctica de muchos lenguajes, Python empieza a <a class="reference external" href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html">contar desde el 0</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># El primer elemento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hola&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># El segundo elemento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como mencionamos antes, hay ciertos lugares donde Python requiere el uso de números enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>). Este es uno de esos lugares, porque no tendría sentido pedir el elemento 0.5. Si usamos un <code class="docutils literal notranslate"><span class="pre">float</span></code>, nos arroja un error:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">58</span><span class="o">-</span><span class="n">aac281aa2955</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mi_tupla</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: tuple indices must be integers or slices, not float
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder al último elemento, se podría hacer lo siguiente. Primero, obtenemos el largo <span class="math notranslate nohighlight">\(N\)</span> de una secuencia con la función <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>y, luego, usamos dicho valor como índice:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">60</span><span class="o">-</span><span class="mf">1908e656</span><span class="n">e176</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mi_tupla</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)]</span>
+
+<span class="ne">IndexError</span>: tuple index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>que nos arroja un <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>… Claro, si Python empieza a contar desde <span class="math notranslate nohighlight">\(0\)</span>, el índice del último elemento es <span class="math notranslate nohighlight">\(N-1\)</span>, no <span class="math notranslate nohighlight">\(N\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;último&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, hacer esto es un <em>anti-pattern</em>. Hay una manera más compacta y legible de acceder a los últimos elementos: Python cuenta los elementos desde el final usando números negativos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># El último elemento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;último&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># El anteúltimo elemento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slicing">
+<h3>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h3>
+<p>Un <code class="docutils literal notranslate"><span class="pre">slice</span></code> nos permite acceder a un subconjunto de una secuencia. La notación es</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">step</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>que devuelve todos los elementos entre <code class="docutils literal notranslate"><span class="pre">start</span></code> (inclusivo) hasta <code class="docutils literal notranslate"><span class="pre">stop</span></code> (exclusivo) separados por <code class="docutils literal notranslate"><span class="pre">step</span></code> elementos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># elementos del 1 al 4 cada 2</span>
+<span class="c1"># es decir, los elementos 1 y 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, &#39;último&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si no ponemos explicitamente alguno de estos valores, por default son:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Es decir, <code class="docutils literal notranslate"><span class="pre">x[::]</span> <span class="pre">==</span> <span class="pre">x[0:-1:1]</span></code></p>
+<p>Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># desde el elemento 1: indices (1, 2, 3)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, True, &#39;último&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># hasta el tercer elemento: indices (0, 1 y 2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;hola&#39;, 42, True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># los elementos impares: indices (1, 3)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, &#39;último&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># los elementos en orden inverso: (3, 2, 1, 0)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;último&#39;, True, 42, &#39;hola&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mutabilidad">
+<h3>Mutabilidad<a class="headerlink" href="#mutabilidad" title="Permalink to this headline">¶</a></h3>
+<p>La diferencia fundamental entre tuplas y listas radica en este concepto: las tuplas son inmutables, es decir, no se pueden modificar, mientras que las listas sí.</p>
+<p>Para modificar un elemento, accedemos a él y le asignamos un nuevo valor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Antes:&quot;</span><span class="p">,</span> <span class="n">mi_lista</span><span class="p">)</span>
+
+<span class="n">mi_lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">84</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Después:&quot;</span><span class="p">,</span> <span class="n">mi_lista</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Antes: [&#39;hola&#39;, 42, True, &#39;último&#39;]
+Después: [&#39;hola&#39;, 84, True, &#39;último&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En cambio, si queremos modificar una tupla, nos arroja un <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">84</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">70</span><span class="o">-</span><span class="mi">17815</span><span class="n">a590667</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">84</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Además, a las listas se le pueden agregar, quitar o reordenar sus elementos. Pueden ver los métodos de una lista en la <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">documentación</a>. Por ejemplo, para agregar un elemento al final de la lista, podemos usar el método <code class="docutils literal notranslate"><span class="pre">append</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>que no devuelve nada (o, técnicamente, devuelve <code class="docutils literal notranslate"><span class="pre">None</span></code>). Como vemos, agregó el elemento <code class="docutils literal notranslate"><span class="pre">35</span></code> al final:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_lista</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hola&#39;, 84, True, &#39;último&#39;, 35]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-3">
+<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">¶</a></h3>
+<p>Corrija el siguiente código para que imprima lo que especifica cada <em>string</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Quinto elemento:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeros 4 elementos:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Últimos 4 elementos:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Elementos pares:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Elementos impares:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    En orden inverso:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Quinto elemento: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+Primeros 4 elementos: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+ Últimos 4 elementos: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+     Elementos pares: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+   Elementos impares: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    En orden inverso: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución:</strong></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Quinto elemento:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeros 4 elementos:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; Últimos 4 elementos:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Elementos pares:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Elementos impares:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    En orden inverso:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Quinto elemento: 5
+Primeros 4 elementos: [0, 1, 2, 3]
+ Últimos 4 elementos: [5, 6, 7, 8]
+     Elementos pares: [0, 2, 4, 6, 8]
+   Elementos impares: [1, 3, 5, 7]
+    En orden inverso: [8, 7, 6, 5, 4, 3, 2, 1, 0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modulos-y-paquetes">
+<h2>Modulos y paquetes<a class="headerlink" href="#modulos-y-paquetes" title="Permalink to this headline">¶</a></h2>
+<p>Así como las funciones permiten reutilizar código, el siguiente nivel son los módulos y paquetes, que permiten <strong>reutilizar funciones y tipos de datos</strong> en otros programas. En su versión más simple, los módulos son simplemente archivos de texto con extensión <code class="docutils literal notranslate"><span class="pre">.py</span></code>, y los paquetes son conjuntos de módulos.</p>
+<p>Python viene con un montón de <a class="reference external" href="https://docs.python.org/3/py-modindex.html">módulos pre-incluidos</a>, por ejemplo, el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>. Para poder usar módulos, primero hay que importarlos con el comando <code class="docutils literal notranslate"><span class="pre">import</span></code> seguido del nombre del módulo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al correr esa linea, Python busca el módulo, lo corre y lo asigna a la variable <code class="docutils literal notranslate"><span class="pre">math</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;math&#39; from &#39;/usr/share/miniconda/envs/book/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, podemos acceder a las cosas que están definidas dentro de <code class="docutils literal notranslate"><span class="pre">math</span></code> usando notación de punto. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">math</span></code> define la constante <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<p>o funciones trigonométricas como el coseno:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, no vamos a usar el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> para hacer cálculos matemáticos, sino que utilizaremos un paquete externo llamado NumPy.</p>
+<p>El mundo de Python está lleno de paquetes que ya tienen la solución a casi todos nuestros problemas. Los más usados en el ambiente científico son:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/">numpy</a>: define el tipo de dato <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, o simplemente <em>array</em>. Representa vectores o matrices, y nos permite hacer operaciones matemáticas sobre ellos de manera rápida y simple. Es la base de (casi) todo lo que es cálculo númerico.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a>: para realizar gráficos y visualizaciones de diverso tipo.</p></li>
+<li><p><a class="reference external" href="https://scipy.org/">scipy</a>: compuesto de varios <em>subpaquetes</em>, cada uno especializado en diversas areas del cálculo numérico, como algebra lineal, integración numérica, optimización, estadística, análisis de imagenes, entre otros.</p></li>
+</ul>
+<p>Otros muy conocidos son:</p>
+<ul class="simple">
+<li><p><strong>pandas y xarray</strong>: DataFrames, o un “<em>Excel</em> avanzado”.</p></li>
+<li><p><strong>seaborn</strong>: gráficos y visualizaciones, basado en matplotlib</p></li>
+<li><p><strong>statsmodels</strong>: estadística</p></li>
+<li><p><strong>sympy</strong>: cálculo simbólico</p></li>
+<li><p><strong>pint</strong>: unidades</p></li>
+<li><p><strong>PyVISA</strong>: control de instrumentos</p></li>
+<li><p><strong>networkx</strong>: redes o gráfos</p></li>
+<li><p><strong>scikit-image</strong>: análisis de imagenes</p></li>
+<li><p><strong>scikit-learn</strong>: machine learning</p></li>
+<li><p><strong>Keras</strong>, <strong>TensorFlow</strong>, <strong>PyTorch</strong>: redes neuronales</p></li>
+</ul>
+<p>Si instalaron Anaconda, muchos de estos paquetes externos vienen pre-instalados.</p>
+</div>
+<div class="section" id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>NumPy, que viene de <em>Numerical Python</em>, es el paquete estándar en todo lo que es cálculo numérico. Para una introducción más completa a NumPy, pueden ir a la <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">documentación</a>.</p>
+<p>Para importar <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, vamos a usar una variante del comando <code class="docutils literal notranslate"><span class="pre">import</span></code>, para asignarle un alias más corto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, tenemos una variable <code class="docutils literal notranslate"><span class="pre">np</span></code> que apunta al paquete <code class="docutils literal notranslate"><span class="pre">numpy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;numpy&#39; from &#39;/usr/share/miniconda/envs/book/lib/python3.8/site-packages/numpy/__init__.py&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es una convención muy difundida importar a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> como <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p>
+<div class="section" id="array">
+<h3>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
+<p>NumPy define una estructura de dato llamada <code class="docutils literal notranslate"><span class="pre">array</span></code>, que tiene similitudes a la tupla y lista. Los arrays de NumPy muestran sus ventajas cuando son utilizados para números. Permiten realizar operaciones matemáticas de manera mucho más simple y rápida, por lo que es <strong>crucial</strong> para lo que es cálculo numérico.</p>
+<p>Para crear un <em>array</em>, se puede pasar una tupla o lista a la función <code class="docutils literal notranslate"><span class="pre">np.array</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>  <span class="c1"># vector o array 1D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4,  8, 15, 16, 23, 42])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para crear <em>arrays</em> multidimensionales, como matrices, se puede pasar una lista de listas, o listas anidadas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>  <span class="c1"># matriz o array 2D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
+       [4, 5, 6]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>NumPy incluye algunas funciones cómodas para crear <em>arrays</em> comúnmente utilizados, como <em>arrays</em> con un mismo valor repetido:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>  <span class="c1"># np.full(shape=5, fill_value=42)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([42, 42, 42, 42, 42])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># np.zeros(shape=(2, 3))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0.],
+       [0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>O de números equiespaciados:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># np.arange(start=3, stop=11, step=2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 5, 7, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>  <span class="c1"># np.linspace(start=0, stop=1, num=11)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="propiedades-shape-size-ndim">
+<h3>Propiedades: shape, size, ndim<a class="headerlink" href="#propiedades-shape-size-ndim" title="Permalink to this headline">¶</a></h3>
+<p>Al igual que las listas, para un <em>array</em> unidimensional, podemos usar la función <code class="docutils literal notranslate"><span class="pre">len</span></code> para conocer la cantidad de elementos que contiene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero, a diferencia de las listas, los <em>arrays</em> pueden ser multidimensionales. En ese caso, necesitamos más de un número para describir su forma. El <code class="docutils literal notranslate"><span class="pre">array</span></code> tiene tres atributos que describen su tamaño:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: tupla con la cantidad de elementos en cada dimensión</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: cantidad de elementos totales</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndim</span></code>: cantidad de dimensiones</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shape =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; size =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ndim =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape = (3, 2)
+ size = 6
+ ndim = 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la función <code class="docutils literal notranslate"><span class="pre">len</span></code> devuelve el largo de la primera dimensión, como si fuese una lista de listas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>El array incluye métodos para <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#transposing-and-reshaping-a-matrix">cambiar su forma</a>, o <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#reshaping-and-flattening-multidimensional-arrays">aplanarse</a>.</p>
+</div>
+<div class="section" id="indexing-y-slicing">
+<h3>Indexing y slicing<a class="headerlink" href="#indexing-y-slicing" title="Permalink to this headline">¶</a></h3>
+<p>Al igual que las listas, se puede acceder a los elementos de un array por índice o por <em>slice</em>. Pero, se extiende la notación en el caso de <em>arrays</em> multidimensionales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
+       [4, 5, 6]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Fila 1, columna 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Fila 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Columna 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 4])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operaciones-matematicas-y-broadcasting">
+<h3>Operaciones matemáticas y broadcasting<a class="headerlink" href="#operaciones-matematicas-y-broadcasting" title="Permalink to this headline">¶</a></h3>
+<p>Este es el punto donde brillan los <em>arrays</em>. Mientras que sumar dos listas las concatena:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 10, 20, 30]
+</pre></div>
+</div>
+</div>
+</div>
+<p>las operaciones entre <em>arrays</em> se hacen elemento a elemento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11, 22, 33])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Supongamos que queremos dividir todos los elementos de un array por 2. Es tan simple como:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 2., 3.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lo que sucede se conoce como <a class="reference external" href="https://numpy.org/doc/stable/user/basics.broadcasting.html#basics-broadcasting"><em>broadcasting</em></a>, que conceptualmente es lo siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Paso</span> <span class="mi">1</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">Paso</span> <span class="mi">2</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="n">Paso</span> <span class="mi">3</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Si los <em>arrays</em> no coinciden en alguna dimensión, nos arroja un error:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">97</span><span class="o">-</span><span class="mi">0527</span><span class="n">bc1cf551</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (2,) (3,) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>A diferencia de las funciones del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, las funciones de NumPy se aplican a todos los elementos de un <em>array</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.000000e+00,  6.123234e-17, -1.000000e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por otro lado, las funciones de <em>reducción</em> de <em>arrays</em>, como la suma (<code class="docutils literal notranslate"><span class="pre">np.sum</span></code>) o el máximo (<code class="docutils literal notranslate"><span class="pre">np.max</span></code>), por defecto se aplican sobre todo el <em>array</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, 42],
+       [ 2,  5]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero se pueden aplicar solo sobre algunas dimensiones con el parámetro <code class="docutils literal notranslate"><span class="pre">axis</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2, 42])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estas funciones también métodos de los <em>arrays</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-indexing">
+<h3>Advanced indexing<a class="headerlink" href="#advanced-indexing" title="Permalink to this headline">¶</a></h3>
+<p>A diferencia de las listas, los <em>arrays</em> se pueden <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#advanced-indexing">indexar de otras formas</a>.</p>
+<p>Si hacemos una comparación, creamos una máscara, o <em>array</em> de booleanos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True, False,  True, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos usar esta mascara para quedarnos solo con los valores donde se cumple la condición:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([42,  5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>A veces, solo nos interesa cuántos cumplen una condición. NumPy almacena la mascara como <code class="docutils literal notranslate"><span class="pre">1</span></code> y <code class="docutils literal notranslate"><span class="pre">0</span></code> para <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code>, respectivamente. Entonces, podemos directamente sumar la máscara para ver cuantos <code class="docutils literal notranslate"><span class="pre">True</span></code> hay:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-4">
+<h2>Ejercicio 4<a class="headerlink" href="#ejercicio-4" title="Permalink to this headline">¶</a></h2>
+<p>Para los siguientes ejercicios, vamos a importar <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y el modulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> de <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La convención es llamarlos <code class="docutils literal notranslate"><span class="pre">np</span></code> y <code class="docutils literal notranslate"><span class="pre">plt</span></code>, respectivamente.</p>
+<div class="section" id="ejercicio-4a">
+<h3>Ejercicio 4a<a class="headerlink" href="#ejercicio-4a" title="Permalink to this headline">¶</a></h3>
+<p>Genere un <em>array</em> con los primeros 10 números al cuadrado, y otro con las primeras 10 potencias de 2.</p>
+<p><strong>Ayuda:</strong> le puede ser útil la función <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escriba el código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución</strong></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  1  4  9 16 25 36 49 64 81]
+[  1   2   4   8  16  32  64 128 256 512]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-4b">
+<h2>Ejercicio 4b<a class="headerlink" href="#ejercicio-4b" title="Permalink to this headline">¶</a></h2>
+<p>Grafique la función <span class="math notranslate nohighlight">\(f(x) = 3 \sin{(2x)} + 1\)</span> en el intervalo <span class="math notranslate nohighlight">\([-5, 5]\)</span>. Para graficar, use <code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y)</span></code>. Pruebe variar la cantidad de puntos que utiliza para graficar.</p>
+<p><strong>Ayuda</strong>: Le puede ser útil la función <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escriba el código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución</strong></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f596c219eb0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/01_python_225_1.png" src="../_images/01_python_225_1.png" />
+</div>
+</div>
+<div class="section" id="ejercicio-4c">
+<h3>Ejercicio 4c<a class="headerlink" href="#ejercicio-4c" title="Permalink to this headline">¶</a></h3>
+<p>A partir de un <em>array</em> <span class="math notranslate nohighlight">\(x\)</span> con 1000 números aleatorios con distribución gaussiana, calcule el promedio <span class="math notranslate nohighlight">\(\bar{x}\)</span>, la desviación estándar <span class="math notranslate nohighlight">\(s\)</span> y qué fracción de números se encuentran a menos de 1 desviación estándar del promedio: <span class="math notranslate nohighlight">\(\bar{x} - s &lt; x &lt; \bar{x} + s\)</span> o, equivalentemente, <span class="math notranslate nohighlight">\(|x - \bar{x}| &lt; s\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genera 1000 números aleatorios</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Continue aquí la solución</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solución</strong></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">promedio</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">desv_est</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">mascara</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">promedio</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">desv_est</span>
+<span class="n">fraccion</span> <span class="o">=</span> <span class="n">mascara</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">mascara</span><span class="o">.</span><span class="n">size</span>  <span class="c1"># positivos / total</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Promedio:&quot;</span><span class="p">,</span> <span class="n">promedio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Desviación estándar:&quot;</span><span class="p">,</span> <span class="n">desv_est</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;El </span><span class="si">{</span><span class="n">fraccion</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> de los datos se encuentran &quot;</span>
+    <span class="s2">&quot;dentro de una desviación estándar del promedio.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Promedio: 0.06845231443582031
+Desviación estándar: 0.9882063063835202
+El 67.3% de los datos se encuentran dentro de una desviación estándar del promedio.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "book"
+        },
+        kernelOptions: {
+            kernelName: "book",
+            path: "./python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'book'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Introducción</a>
+    <a class='right-next' id="next-link" href="../clase_1/02_estocastico.html" title="next page">Experimento estocástico</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mauro Silberberg<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
