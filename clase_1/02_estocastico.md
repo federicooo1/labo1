@@ -59,19 +59,19 @@ import numpy as np
 import scipy.stats
 ```
 
-Supongamos que realizamos las siguientes 30 mediciones, que guardamos en un array de NumPy:
+Supongamos que realizamos las siguientes 28 mediciones, que guardamos en un array de NumPy:
 
 ```{code-cell}
 :tags: []
 
 # fmt: off
 periodos = np.array([
-    1.03, 1.09, 1.18, 1.19, 1.03,
-    1.12, 1.26, 1.16, 1.16, 0.97,
-    0.96, 1.04, 1.21, 1.11, 1.10,
-    1.16, 1.07, 1.15, 1.08, 1.03,
-    1.08, 1.09, 1.21, 1.20, 1.23,
-    1.05, 1.02, 1.06, 1.19, 1.02,
+    1.51, 1.59, 1.64, 1.68, 1.60,
+    1.69, 1.72, 1.45, 1.44, 1.56,
+    1.67, 1.47, 1.59, 1.75, 1.41,
+    1.49, 1.85, 1.52, 1.47, 1.87,
+    1.59, 1.66, 1.89, 1.55, 1.58,
+    1.62, 1.54, 1.58,
 ])
 # fmt: on
 ```
