@@ -1,5 +1,9 @@
 - file: index
 
+- part: Python
+  chapters:
+    - file: python/01_python
+
 - part: Clase 1
   chapters:
   - file: clase_1/02_estocastico
