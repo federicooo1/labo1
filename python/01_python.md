@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.0
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: book
   language: python
@@ -33,7 +33,7 @@ A excepción de la exponenciación, que en otros lenguajes se usa el símbolo `^
 
 Por ejemplo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 7 / 2
@@ -49,13 +49,13 @@ Otros operadores aritméticos que pueden ser de utilidad son:
 
 Por ejemplo, "7 dividido 2 es 3 y el resto es 1":
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 7 // 2
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 7 % 2
@@ -80,13 +80,13 @@ Los operadores de comparación son:
 
 y devuelven `True` o `False`, un tipo de dato llamado `bool`eano.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 5 > 3
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 2 + 2 == 5  # Es equivalente a (2 + 2) == 5
@@ -96,7 +96,7 @@ Noten que para chequear igualdad hay que poner doble `=`.
 
 Si ponemos un único igual, nos va a *arrojar* un error:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 4 = 5
@@ -120,7 +120,7 @@ Casi cualquier palabra es un [nombre válido para una variable](https://docs.pyt
 
 Por ahora, vamos a ignorar nuestro consejo y usar `x`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 x
@@ -128,7 +128,7 @@ x
 
 Nos *arrojó* un error. Claro, no *guardamos* nada en `x` aún:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = 3
@@ -136,7 +136,7 @@ x = 3
 
 Noten que al asignar una variable, no *devuelve* nada. Si queremos ver que está guardado en `x`, podemos poner simplemente `x` en una celda:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x
@@ -144,7 +144,7 @@ x
 
 o, también, podemos usar la función `print`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 print(x)
@@ -154,13 +154,13 @@ Para hacer más *legible* el código, es importante ir guardando resultados inte
 
 Por ejemplo, ahora podemos usar este *resultado intermedio* en otras operaciones:
 
-```{code-cell} ipython3
+```{code-cell}
 2 * x
 ```
 
 que, a su vez, podriamos guardarlo en otra variable:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 y = 2 * x
@@ -170,13 +170,13 @@ y
 
 Al principio, algo potencialmente confuso es que se puede hacer esto:
 
-```{code-cell} ipython3
+```{code-cell}
 x = x + 1
 ```
 
 ¿Cuánto vale `x` ahora?
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x
@@ -196,7 +196,7 @@ Reiterando, el `=` no representa una igualdad, sino una asignación.
 
 Para asignar multiples variables a la vez, se puede hacer una asignación por linea:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = 1
@@ -205,7 +205,7 @@ y = 2
 
 o, todo en una línea, separandolas por comas:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x, y = 1, 2
@@ -220,7 +220,7 @@ En principio, ambas maneras son equivalentes. Pero, desde el punto de hacer más
 
 De la misma manera, se puede mostrar el resultado de más de una variable con una tupla:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x, y
@@ -228,7 +228,7 @@ x, y
 
 pero no poniéndolas en distintas lineas:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x
@@ -239,7 +239,7 @@ ya que solo se nos muestra el resultado de la última linea, si no es una asigna
 
 En cambio, sí funciona con `print`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 print(x)
@@ -260,13 +260,13 @@ $$ x_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 - Las raíces son $x=1$ y $x=4$.
 
-```{code-cell} ipython3
+```{code-cell}
 # Complete el código aquí
 ```
 
 **Solución**:
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true
@@ -299,7 +299,7 @@ Como mencionamos antes, en Python, **todo es un objeto**. Por ahora, solo nos va
 
 Para saber el tipo de un objeto, hay que usar la función `type`. Por ejemplo, el tipo del número `2` es:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 type(2)
@@ -322,7 +322,7 @@ Pueden notar que hay dos tipos de números: los enteros (`int`) y los de [punto 
 
 Por ejemplo, si sumamos dos `int`, obtenemos otro `int`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = 2 + 2
@@ -332,7 +332,7 @@ x, type(x)
 
 Pero si dividimos dos `int`, obtenemos un `float`:
 
-```{code-cell} ipython3
+```{code-cell}
 x = 8 / 2
 
 x, type(x)
@@ -344,7 +344,7 @@ Por ahora, los usamos indistintamente, pero la diferencia es importante por (al 
 
 1. Hay ciertos lugares donde Python requiere que se utilize un `int`. Siempre podemos convertir un `float` en un `int` de la siguiente manera:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 int(4.0)
@@ -352,7 +352,7 @@ int(4.0)
 
 2. Hay que tener cuidado al comparar `float`s:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = 0.1 + 0.2
@@ -362,7 +362,7 @@ x == 0.3
 
 porque `x` es:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x
@@ -372,7 +372,7 @@ x
 
 Para comparar `float`s, hay que elegir una tolerancia, por ejemplo, $10^{-15}$, chequear si se encuentran a menos de esa distancia: $|x-y| < 10^{-15}$
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 abs(x - 0.3) < 1e-15
@@ -384,7 +384,7 @@ Las cadenas de texto, o *strings*, son el tipo de objeto que Python usa para tex
 
 Se pueden definir tanto comillas simples como dobles: `'hola'` o `"hola"`. También esta la opción de triple comilla, que sirve para texto de multiples renglones:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 """Este es un
@@ -397,19 +397,19 @@ Noten que divide los renglones con un `\n`, que es el código que se usa para se
 
 Python interpreta la suma entre `str` como concatenación:
 
-```{code-cell} ipython3
+```{code-cell}
 "hola" + "mundo"
 ```
 
 Incluso si son números:
 
-```{code-cell} ipython3
+```{code-cell}
 "2" + "2"
 ```
 
 A diferencia de *cierto otro lenguaje que no vamos a nombrar*, Python arroja un error de tipo (`TypeError`) cuando se quieren sumar números y *strings*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 2 + "2"
@@ -423,15 +423,15 @@ porque no sabe si queremos de resultado `4` o `"22"` y, ante la duda, prefiere n
 
 Hay diversas maneras de insertar variables dentro de *strings*, pero la más legible (y por lo tanto, recomendada) es la de los `f-strings`, que consiste en poner una `f` antes de abrir comillas y poner las variables encerradas en llaves `{}`. Por ejemplo:
 
-```{code-cell} ipython3
+```{code-cell}
 x = 42
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 "La respuesta es x"
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 f"La respuesta es {x}"
@@ -439,7 +439,7 @@ f"La respuesta es {x}"
 
 Se puede especificar el formato en el que convierte la variable a texto, por ejemplo, para redondear hasta determinado número de decimales:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 pi = 3.141592
@@ -457,7 +457,7 @@ Las funciones son bloques de código que reciben párametros, realizan una serie
 
 Es más fácil entenderlo con un ejemplo simple. Definamos una función para calcular el largo de un vector:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 def norma_vector(x, y):
@@ -468,7 +468,7 @@ def norma_vector(x, y):
 
 Ahora tenemos una variable llamada `norma_vector` que *apunta* a la función:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 norma_vector
@@ -476,7 +476,7 @@ norma_vector
 
 Y podemos *llamar* a la función pasandole los argumentos entre paréntesis:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 norma_vector(3, 4)
@@ -492,7 +492,7 @@ Sobre la definición de una función, hay varios puntos a resaltar:
 
 4. El *docstring*, o *string* de documentación, que es la primer linea dentro del bloque de la función. Describe brevemente que hace la función, que parámetros toma y que devuelve. Se puede acceder a ellas con la función `help`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 help(norma_vector)
@@ -521,7 +521,7 @@ Todas estas formas de llamar la función son válidas y dan el mismo resultado.
 
 En cambio, nos va a tirar un error si nos olvidamos de un parametro:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 norma_vector(1)
@@ -529,7 +529,7 @@ norma_vector(1)
 
 O si ponemos argumentos posicionales despues de los que son por nombre:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 norma_vector(y=2, 1)
@@ -553,7 +553,7 @@ def funcion(x, y=1):
 
 Veamos una función que ya usamos y define variables por defecto:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 help(print)
@@ -561,7 +561,7 @@ help(print)
 
 `print` tiene ciertos parametros que controlan cómo y a dónde *imprime*. Por defecto, agrega una nueva linea, `"\n"`, al final de lo que imprime:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 print(1)
@@ -570,7 +570,7 @@ print(2)
 
 Pero si queremos poner otro valor, solo tenemos que pasarle ese parámetro por nombre, sin tener que pasarle el resto de los parámetros:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 print(1, end=" -> ")
@@ -581,7 +581,7 @@ print(2)
 
 Encapsule en una función el código para calcular las raices de la cuadrática y vuelva a calcular las raíces del polinomio $2x^2 - 10x + 8$.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 # Complete el código aquí
@@ -589,7 +589,7 @@ Encapsule en una función el código para calcular las raices de la cuadrática 
 
 **Solución**
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true
@@ -616,7 +616,7 @@ Definir funciones tiene múltiples ventajas en términos de estructurar nuestro 
 
 Para empezar, las funciones nos permiten *reusar* código. Si un bloque de código se repite múltiples veces, podemos "sacar factor común" y definir una función en su lugar. Por ejemplo, si queremos calcular las raices de multiples polinomios, podemos reusar la función que ya definimos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 raices_1 = raices_cuadratica(1, 0, -1)
@@ -651,7 +651,7 @@ En este ejemplo, el nivel de abstracción correcto parecería ser agrupar los pa
 
 Otro beneficio de las funciones es que encapsulan código y nos salvan de *pisar* o sobreeescribir variables que definimos previamente. Mientras que una función puede acceder a una variable externa a la función:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 variable_externa = 1
@@ -669,7 +669,7 @@ suma_variable_externa_a(10)
 
 no modifica las variables externas:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 dos
@@ -677,7 +677,7 @@ dos
 
 Además, las variables internas y los parámetros de la función no son accesibles desde el exterior:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 variable_interna
@@ -693,7 +693,7 @@ Un paradigma de programación, llamado [programación funcional](https://en.wiki
 
 Los métodos son funciones que están asociadas a un objeto. La sintaxis para acceder a ellos es poner un punto después del objeto. Por ejemplo, el método `str.upper` sirve para convertir un *string* en mayúsculas o *uppercase*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = "hola"
@@ -721,13 +721,13 @@ En cambio, si fuese un método de los números, no podríamos equivocarnos y pas
 
 En particular, esa método ya existe, y se llama `as_integer_ratio`:
 
-```{code-cell} ipython3
+```{code-cell}
 (0.25).as_integer_ratio()
 ```
 
 Pero si tratamos de usarlo en un `str`, nos dice que no existe:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 "hola".as_integer_ratio()
@@ -739,7 +739,7 @@ En Python, hay diversas estructuras de datos que nos permiten manejar conjuntos 
 
 La tupla y la lista son similares entre sí: ambas *guardan* una secuencia de objetos, es decir, un conjunto ordenado de objetos. La sintaxis para definirlas también es similar: se separa un grupo de objetos por comas, y se los encierra entre paréntesis (tuplas) o corchetes (listas).
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla = ("hola", 42, True, "último")
@@ -767,13 +767,13 @@ Pero, en lugar de tener 4 nombres distintos, tenemos un único nombre con una no
 
 En ambos casos, podemos acceder a los elementos por su ubicación o índice. Siguendo la práctica de muchos lenguajes, Python empieza a [contar desde el 0](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html):
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[0]  # El primer elemento
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[1]  # El segundo elemento
@@ -781,7 +781,7 @@ mi_tupla[1]  # El segundo elemento
 
 Como mencionamos antes, hay ciertos lugares donde Python requiere el uso de números enteros (`int`). Este es uno de esos lugares, porque no tendría sentido pedir el elemento 0.5. Si usamos un `float`, nos arroja un error:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 mi_tupla[1.0]
@@ -789,7 +789,7 @@ mi_tupla[1.0]
 
 Para acceder al último elemento, se podría hacer lo siguiente. Primero, obtenemos el largo $N$ de una secuencia con la función `len`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 len(mi_tupla)
@@ -797,7 +797,7 @@ len(mi_tupla)
 
 y, luego, usamos dicho valor como índice:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 mi_tupla[len(mi_tupla)]
@@ -805,7 +805,7 @@ mi_tupla[len(mi_tupla)]
 
 que nos arroja un `IndexError`... Claro, si Python empieza a contar desde $0$, el índice del último elemento es $N-1$, no $N$:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[len(mi_tupla) - 1]
@@ -813,13 +813,13 @@ mi_tupla[len(mi_tupla) - 1]
 
 Sin embargo, hacer esto es un *anti-pattern*. Hay una manera más compacta y legible de acceder a los últimos elementos: Python cuenta los elementos desde el final usando números negativos.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[-1]  # El último elemento
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[-2]  # El anteúltimo elemento
@@ -837,7 +837,7 @@ x[start:stop:step]
 
 que devuelve todos los elementos entre `start` (inclusivo) hasta `stop` (exclusivo) separados por `step` elementos.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[1:4:2]  # elementos del 1 al 4 cada 2
@@ -856,25 +856,25 @@ Es decir, `x[::] == x[0:-1:1]`
 
 Por ejemplo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[1:]  # desde el elemento 1: indices (1, 2, 3)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[:3]  # hasta el tercer elemento: indices (0, 1 y 2)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[1::2]  # los elementos impares: indices (1, 3)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_tupla[::-1]  # los elementos en orden inverso: (3, 2, 1, 0)
@@ -886,7 +886,7 @@ La diferencia fundamental entre tuplas y listas radica en este concepto: las tup
 
 Para modificar un elemento, accedemos a él y le asignamos un nuevo valor:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 print("  Antes:", mi_lista)
@@ -898,7 +898,7 @@ print("Después:", mi_lista)
 
 En cambio, si queremos modificar una tupla, nos arroja un `TypeError`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 mi_tupla[1] = 84
@@ -906,13 +906,13 @@ mi_tupla[1] = 84
 
 Además, a las listas se le pueden agregar, quitar o reordenar sus elementos. Pueden ver los métodos de una lista en la [documentación](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists). Por ejemplo, para agregar un elemento al final de la lista, podemos usar el método `append`:
 
-```{code-cell} ipython3
+```{code-cell}
 mi_lista.append(35)
 ```
 
 que no devuelve nada (o, técnicamente, devuelve `None`). Como vemos, agregó el elemento `35` al final:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 mi_lista
@@ -922,7 +922,7 @@ mi_lista
 
 Corrija el siguiente código para que imprima lo que especifica cada *string*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8]
@@ -937,7 +937,7 @@ print("    En orden inverso:", x)
 
 **Solución:**
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true
@@ -959,7 +959,7 @@ Así como las funciones permiten reutilizar código, el siguiente nivel son los 
 
 Python viene con un montón de [módulos pre-incluidos](https://docs.python.org/3/py-modindex.html), por ejemplo, el módulo `math`. Para poder usar módulos, primero hay que importarlos con el comando `import` seguido del nombre del módulo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 import math
@@ -967,7 +967,7 @@ import math
 
 Al correr esa linea, Python busca el módulo, lo corre y lo asigna a la variable `math`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 math
@@ -975,7 +975,7 @@ math
 
 Ahora, podemos acceder a las cosas que están definidas dentro de `math` usando notación de punto. Por ejemplo, `math` define la constante $\pi$:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 math.pi
@@ -983,7 +983,7 @@ math.pi
 
 o funciones trigonométricas como el coseno:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 math.cos(math.pi)
@@ -1020,7 +1020,7 @@ NumPy, que viene de *Numerical Python*, es el paquete estándar en todo lo que e
 
 Para importar `numpy`, vamos a usar una variante del comando `import`, para asignarle un alias más corto:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 import numpy as np
@@ -1028,7 +1028,7 @@ import numpy as np
 
 Ahora, tenemos una variable `np` que apunta al paquete `numpy`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np
@@ -1046,7 +1046,7 @@ NumPy define una estructura de dato llamada `array`, que tiene similitudes a la 
 
 Para crear un *array*, se puede pasar una tupla o lista a la función `np.array`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.array([4, 8, 15, 16, 23, 42])  # vector o array 1D
@@ -1054,7 +1054,7 @@ np.array([4, 8, 15, 16, 23, 42])  # vector o array 1D
 
 Para crear *arrays* multidimensionales, como matrices, se puede pasar una lista de listas, o listas anidadas:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.array([[1, 2, 3], [4, 5, 6]])  # matriz o array 2D
@@ -1062,13 +1062,13 @@ np.array([[1, 2, 3], [4, 5, 6]])  # matriz o array 2D
 
 NumPy incluye algunas funciones cómodas para crear *arrays* comúnmente utilizados, como *arrays* con un mismo valor repetido:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.full(5, 42)  # np.full(shape=5, fill_value=42)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.zeros((2, 3))  # np.zeros(shape=(2, 3))
@@ -1076,13 +1076,13 @@ np.zeros((2, 3))  # np.zeros(shape=(2, 3))
 
 O de números equiespaciados:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.arange(3, 11, 2)  # np.arange(start=3, stop=11, step=2)
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.linspace(0, 1, 11)  # np.linspace(start=0, stop=1, num=11)
@@ -1092,7 +1092,7 @@ np.linspace(0, 1, 11)  # np.linspace(start=0, stop=1, num=11)
 
 Al igual que las listas, para un *array* unidimensional, podemos usar la función `len` para conocer la cantidad de elementos que contiene.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 len(np.array([1, 2, 3]))
@@ -1104,7 +1104,7 @@ Pero, a diferencia de las listas, los *arrays* pueden ser multidimensionales. En
 2. `size`: cantidad de elementos totales
 3. `ndim`: cantidad de dimensiones
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.array([[1, 2], [3, 4], [5, 6]])
@@ -1116,7 +1116,7 @@ print(" ndim =", x.ndim)
 
 En este caso, la función `len` devuelve el largo de la primera dimensión, como si fuese una lista de listas.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 len(x)
@@ -1130,26 +1130,26 @@ El array incluye métodos para [cambiar su forma](https://numpy.org/doc/stable/u
 
 Al igual que las listas, se puede acceder a los elementos de un array por índice o por *slice*. Pero, se extiende la notación en el caso de *arrays* multidimensionales:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.array([[1, 2, 3], [4, 5, 6]])
 x
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x[1, 2]  # Fila 1, columna 2
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x[0]  # Fila 0
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x[:, 0]  # Columna 0
@@ -1159,7 +1159,7 @@ x[:, 0]  # Columna 0
 
 Este es el punto donde brillan los *arrays*. Mientras que sumar dos listas las concatena:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 [1, 2, 3] + [10, 20, 30]
@@ -1167,7 +1167,7 @@ Este es el punto donde brillan los *arrays*. Mientras que sumar dos listas las c
 
 las operaciones entre *arrays* se hacen elemento a elemento:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.array([1, 2, 3]) + np.array([10, 20, 30])
@@ -1175,7 +1175,7 @@ np.array([1, 2, 3]) + np.array([10, 20, 30])
 
 Supongamos que queremos dividir todos los elementos de un array por 2. Es tan simple como:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.array([2, 4, 6]) / 2
@@ -1193,7 +1193,7 @@ Paso 3: np.array([1, 2, 3])
 
 Si los *arrays* no coinciden en alguna dimensión, nos arroja un error:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [raises-exception]
 
 np.array([1, 1]) * np.array([3, 3, 3])
@@ -1201,7 +1201,7 @@ np.array([1, 1]) * np.array([3, 3, 3])
 
 A diferencia de las funciones del módulo `math`, las funciones de NumPy se aplican a todos los elementos de un *array*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.pi * np.array([0, 0.5, 1])
@@ -1211,14 +1211,14 @@ np.cos(x)
 
 Por otro lado, las funciones de *reducción* de *arrays*, como la suma (`np.sum`) o el máximo (`np.max`), por defecto se aplican sobre todo el *array*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.array([[1, 42], [2, 5]])
 x
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.max(x)
@@ -1226,7 +1226,7 @@ np.max(x)
 
 Pero se pueden aplicar solo sobre algunas dimensiones con el parámetro `axis`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.max(x, axis=0)
@@ -1234,7 +1234,7 @@ np.max(x, axis=0)
 
 Estas funciones también métodos de los *arrays*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x.max()
@@ -1246,7 +1246,7 @@ A diferencia de las listas, los *arrays* se pueden [indexar de otras formas](htt
 
 Si hacemos una comparación, creamos una máscara, o *array* de booleanos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.array([1, 42, 2, 5, 0])
@@ -1256,7 +1256,7 @@ x > 3
 
 Podemos usar esta mascara para quedarnos solo con los valores donde se cumple la condición:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x[x > 3]
@@ -1266,7 +1266,7 @@ x[x > 3]
 
 A veces, solo nos interesa cuántos cumplen una condición. NumPy almacena la mascara como `1` y `0` para `True` y `False`, respectivamente. Entonces, podemos directamente sumar la máscara para ver cuantos `True` hay:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 (x > 3).sum()
@@ -1276,7 +1276,7 @@ A veces, solo nos interesa cuántos cumplen una condición. NumPy almacena la ma
 
 Para los siguientes ejercicios, vamos a importar `numpy` y el modulo `pyplot` de `matplotlib`:
 
-```{code-cell} ipython3
+```{code-cell}
 import matplotlib.pyplot as plt
 import numpy as np
 ```
@@ -1291,7 +1291,7 @@ Genere un *array* con los primeros 10 números al cuadrado, y otro con las prime
 
 **Ayuda:** le puede ser útil la función `np.arange`.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 # Escriba el código aquí
@@ -1299,7 +1299,7 @@ Genere un *array* con los primeros 10 números al cuadrado, y otro con las prime
 
 **Solución**
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true
@@ -1319,7 +1319,7 @@ Grafique la función $f(x) = 3 \sin{(2x)} + 1$ en el intervalo $[-5, 5]$. Para g
 
 **Ayuda**: Le puede ser útil la función `np.linspace`.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 # Escriba el código aquí
@@ -1327,7 +1327,7 @@ Grafique la función $f(x) = 3 \sin{(2x)} + 1$ en el intervalo $[-5, 5]$. Para g
 
 **Solución**
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true
@@ -1343,7 +1343,7 @@ plt.plot(x, y)
 
 A partir de un *array* $x$ con 1000 números aleatorios con distribución gaussiana, calcule el promedio $\bar{x}$, la desviación estándar $s$ y qué fracción de números se encuentran a menos de 1 desviación estándar del promedio: $\bar{x} - s < x < \bar{x} + s$ o, equivalentemente, $|x - \bar{x}| < s$.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 # Genera 1000 números aleatorios
@@ -1354,7 +1354,7 @@ x = np.random.normal(loc=0, scale=1, size=1000)
 
 **Solución**
 
-```{code-cell} ipython3
+```{code-cell}
 ---
 jupyter:
   source_hidden: true

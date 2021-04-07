@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.0
+    jupytext_version: 1.10.3
 kernelspec:
   display_name: book
   language: python
@@ -50,7 +50,7 @@ Para analizar las mediciones, usaremos dos paquetes de Python fundamentales para
 
 Además, usaremos `ipywidgets` para generar elementos interactivos.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 import ipywidgets
@@ -61,7 +61,7 @@ import scipy.stats
 
 Supongamos que realizamos las siguientes 30 mediciones, que guardamos en un array de NumPy:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 # fmt: off
@@ -95,7 +95,7 @@ Pero, ¿qué gráfico?
 
 La función más básica para realizar gráficos es `plot`, que realiza gráficos de línea. Para ello, toma pares ordenados de puntos $(x, y)$, los grafica y une con una linea. Por ejemplo, grafiquemos $y = \cos (x)$:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.linspace(0, 10, 100)  # [0, 0.1, ..., 10]
@@ -111,7 +111,7 @@ En nuestro experimento no hay pares de valores `(x, y)`, sino que solo tenemos `
 
 Si no pasamos un valor para `x`, la función automáticamente asigna valores de $0$ a $N-1$ para `x`, donde $N$ es la cantidad de mediciones. Se produce un gráfico donde en el eje vertical se encuentra el periodo medido, y en el eje horizontal, el *número de medición*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.plot(periodos, "o-")
@@ -137,7 +137,7 @@ plt.plot(periodos, "o")
 
 O, con la función `plt.scatter`, que requiere que le pasemos explícitamente los valores de `x`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 numero_de_medicion = np.arange(periodos.size)  # [0, 1, ..., N-1]
@@ -148,7 +148,7 @@ plt.ylabel("Periodo [s]")
 
 Cuando sabemos cuál es el error de cada punto, se suele hacer un gráfico con barras de error con la función `plt.errorbar`:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.errorbar(numero_de_medicion, periodos, yerr=0.01, fmt=".")
@@ -162,7 +162,7 @@ que en este caso permite apreciar facilmente que los intervalos de las distintas
 
 Un *scatter plot* es un buen gráfico para ver si hay una relación entre dos variables. Por ejemplo, si las mediciones variaran en función del tiempo, podríamos ver algo así:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.linspace(0, 20, 30)
@@ -174,7 +174,7 @@ plt.ylabel("Periodo [s]")
 
 Sin embargo, no es lo que sucede en nuestro experimento. Nuestra variable del eje $x$, el número de medición, es arbitraria: corresponde a que estudiante realizó cada medición. La ubicación en el eje horizontal podríamos reordenarla como quisieramos. Como solo nos interesa lo que pasa en el eje vertical, podríamos "borrar" la información del eje horizontal, y asignarle $x=0$ a todos los puntos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.scatter(np.zeros_like(periodos), periodos)
@@ -190,7 +190,7 @@ De este gráfico, podriamos ver en qué valores se agrupan más mediciones. Pero
 
 Un histograma es una **representación de la distribución de los datos**. Para construirlo, se dividen los datos en un conjunto de intervalos y se cuentan cuantos valores caen en cada intervalo. Generalmente, se muestra como un gráfico de barras, donde se coloca una barra para cada intervalo y la altura de cada barra viene dada por la cantidad de datos en su correspondiente intervalo.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.hist(periodos, bins=7, edgecolor="black")
@@ -202,7 +202,7 @@ A diferencia de los gráficos anteriores, hacer un histograma requiere de una el
 
 En particular, con pocos datos, es más díficil elegir un número de *bins* bueno. Podemos generar más datos para ver como influye variar la cantidad de *bins*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.random.normal(size=10_000)
@@ -223,7 +223,7 @@ En el extremo de un único intervalo, el histograma solamente nos dice cuántos 
 
 Si están corriendo el *notebook*, pueden variar la cantidad de intervalos con el *slider*:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 @ipywidgets.interact(bins=ipywidgets.FloatLogSlider(100, min=0, max=5))
@@ -259,7 +259,7 @@ con $i$ de $1$ a $N$.
 
 Gráficamente, es la distancia (vertical) de los puntos azules a la linea naranja en el siguiente gráfico:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 
 c_min, c_max = 0.9 * periodos.min(), 1.1 * periodos.max()
@@ -306,7 +306,7 @@ S(c) &= |x_1 - c|^2 + |x_2 - c|^2 + \ldots + |x_N - c|^2
 
 Noten que la suma es una función de una única variable, $c$, ya que los $x_i$ son valores fijos dados por nuestras mediciones. Podemos gráficar esta función, que es una parábola:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 
 x = np.linspace(c_min, c_max, 100)
@@ -335,7 +335,7 @@ Es decir, el valor óptimo (en el sentido de cuadrados mínimos) es el promedio 
 
 NumPy incluye una función para calcularlo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.mean(periodos)
@@ -359,13 +359,13 @@ llegamos a lo que se conoce como la desviación estándar.
 
 NumPy incluye funciones para calcular ambas:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.var(periodos)  # variance
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.std(periodos)  # standard deviation
@@ -375,7 +375,7 @@ np.std(periodos)  # standard deviation
 
 Con estas dos medidas, podemos resumir nuestras mediciones en dos números: el promedio y la desviación estandar.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 
 promedio = np.mean(periodos)
@@ -386,7 +386,7 @@ print(f"({promedio:.3f} ± {desv_est:.3f}) s")
 
 Gráficamente, podríamos pensar que estamos reemplazando nuestro histograma por el siguiente intervalo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 
 plt.hist(periodos, bins=7, color=(0.8, 0.8, 0.8), edgecolor="black")
@@ -425,7 +425,7 @@ $$ N(x | \mu, \sigma) \propto \exp \left( \frac{1}{2}\left(\frac{x-\mu}{\sigma}\
 
 Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 @ipywidgets.interact(mu=(-5, 5), sigma=(0.4, 3, 0.3))
@@ -444,7 +444,7 @@ def _(mu=0, sigma=1):
 
 Cuanto está escrita de esta manera, podemos estimar $\mu$ y $\sigma$ como el promedio y la desviación estandar de los datos. Comparemos el histograma con una gaussiana:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [hide-input]
 
 # Histograma normalizado
@@ -487,7 +487,7 @@ Entonces, la interpretación estadística del intervalo dado por $\bar{x} \pm s$
 
 Podemos chequear que fracción de nuestras mediciones están en dicho intervalo:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 cond = np.abs(periodos - promedio) < desv_est  # periodos dentro de x̄ ± s
@@ -502,7 +502,7 @@ Generalmente, se va a dar que el histograma de las mediciones tengan *forma de c
 
 Sin embargo, no siempre tiene sentido resumir mediciones en promedio y desviación estandar. Por ejemplo, si las mediciones fueran de los números que salen al arrojar dados, esperariamos un histograma donde todos los números del 1 al 6 tienen la misma probabilidad.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.figure(figsize=(6, 2))
@@ -536,7 +536,7 @@ Para ver cuál es el error del promedio, hagamos otro experimento, pero esta vez
 
 En particular, generemos un millón de datos aleatorios con distribución normal $N(0, 1)$, es decir, con valor medio $\mu = 0$ y desviación estándar $\sigma = 1$:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 x = np.random.normal(loc=0, scale=1, size=int(1e6))
@@ -544,7 +544,7 @@ x = np.random.normal(loc=0, scale=1, size=int(1e6))
 
 Lo primero que podemos hacer es un histograma de estos datos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 plt.hist(x, bins=100, histtype="step");
@@ -552,7 +552,7 @@ plt.hist(x, bins=100, histtype="step");
 
 La distribución está centrada en 0, como era de esperarse. Podemos calcular el promedio y la desviación estándar de todos los datos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.mean(x), np.std(x)
@@ -560,7 +560,7 @@ np.mean(x), np.std(x)
 
 No dan exactamente 0 y 1, pero están bastante cerca. ¿Qué pasará en cambio si solo consideramos los 10 primeros datos?
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 np.mean(x[:10]), np.std(x[:10])
@@ -572,7 +572,7 @@ También están cerca de esos valores, pero no tan cerca como al considerar 1 mi
 
 Podemos hacer un gráfico de estos en función de la cantidad de datos que tomamos:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 N = np.geomspace(10, x.size, num=30, dtype=int)
@@ -594,7 +594,7 @@ ax[0].legend();
 
 Al ir aumentando el número de mediciones, tanto el promedio como la desviación estándar se acercan cada vez más al *valor real*. Tiene sentido, ya que pasa lo mismo con el histograma.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 @ipywidgets.interact(N=ipywidgets.FloatLogSlider(10, min=1, max=5))
@@ -617,7 +617,7 @@ donde $\sigma_x$ es la desviación estándar de los datos $\{x_i\}$, y $N$ es la
 
 Comparemos los valores "experimentales" para el error del promedio $|\bar{x} - \mu|$ con lo esperado teóricamente, $\frac{\sigma_x}{\sqrt{N}}$.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 error_promedio = np.abs(promedios - 0)
@@ -634,7 +634,7 @@ plt.grid()
 
 Para reportar nuestra mejor determinación del periodo entre chasquidos, usaremos el promedio y el error del promedio:
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: []
 
 N = periodos.size  # Cantidad de datos
