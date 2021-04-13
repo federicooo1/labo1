@@ -945,7 +945,7 @@ tags: [hide-input]
 ---
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-print("     Quinto elemento:", x[5])
+print("     Quinto elemento:", x[4])
 print("Primeros 4 elementos:", x[:4])
 print(" Últimos 4 elementos:", x[-4:])
 print("     Elementos pares:", x[::2])
