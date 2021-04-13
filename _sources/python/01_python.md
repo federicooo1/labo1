@@ -264,7 +264,7 @@ $$ x_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 # Complete el código aquí
 ```
 
-**Solución**:
+### Solución
 
 ```{code-cell}
 ---
@@ -587,7 +587,7 @@ Encapsule en una función el código para calcular las raices de la cuadrática 
 # Complete el código aquí
 ```
 
-**Solución**
+#### Solución
 
 ```{code-cell}
 ---
@@ -935,7 +935,7 @@ print("   Elementos impares:", x)
 print("    En orden inverso:", x)
 ```
 
-**Solución:**
+#### Solución
 
 ```{code-cell}
 ---
@@ -945,7 +945,7 @@ tags: [hide-input]
 ---
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-print("     Quinto elemento:", x[5])
+print("     Quinto elemento:", x[4])
 print("Primeros 4 elementos:", x[:4])
 print(" Últimos 4 elementos:", x[-4:])
 print("     Elementos pares:", x[::2])
@@ -1297,7 +1297,7 @@ Genere un *array* con los primeros 10 números al cuadrado, y otro con las prime
 # Escriba el código aquí
 ```
 
-**Solución**
+#### Solución
 
 ```{code-cell}
 ---
@@ -1311,9 +1311,7 @@ print(x ** 2)
 print(2 ** x)
 ```
 
-## Ejercicio 4b
-
-+++
+### Ejercicio 4b
 
 Grafique la función $f(x) = 3 \sin{(2x)} + 1$ en el intervalo $[-5, 5]$. Para graficar, use `plt.plot(x, y)`. Pruebe variar la cantidad de puntos que utiliza para graficar.
 
@@ -1325,7 +1323,7 @@ Grafique la función $f(x) = 3 \sin{(2x)} + 1$ en el intervalo $[-5, 5]$. Para g
 # Escriba el código aquí
 ```
 
-**Solución**
+#### Solución
 
 ```{code-cell}
 ---
@@ -1352,7 +1350,7 @@ x = np.random.normal(loc=0, scale=1, size=1000)
 # Continue aquí la solución
 ```
 
-**Solución**
+#### Solución
 
 ```{code-cell}
 ---
